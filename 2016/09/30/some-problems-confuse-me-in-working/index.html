@@ -88,15 +88,15 @@
 
 <meta name="description" content="1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸1234567+(UIImage *)resizableImageNamed:(NSString *)name&amp;#123;    UIImage *image = [UIImage imageNamed:name];   CGFloat w = image.size.width;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="some problems confuse me in working(第6周summary课题)">
+<meta property="og:title" content="some problems confusing for long time at work(第6周summary课题)">
 <meta property="og:url" content="www.coderlychow.com/2016/09/30/some-problems-confuse-me-in-working/index.html">
 <meta property="og:site_name" content="Life Is An Exploration">
 <meta property="og:description" content="1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸1234567+(UIImage *)resizableImageNamed:(NSString *)name&amp;#123;    UIImage *image = [UIImage imageNamed:name];   CGFloat w = image.size.width;">
 <meta property="og:image" content="www.coderlychow.com/images/binary_octal_decimal_hexadecimal_conversion_pageone.jpg">
 <meta property="og:image" content="www.coderlychow.com/images/binary_octal_decimal_hexadecimal_conversion_pagetwo.jpg">
-<meta property="og:updated_time" content="2016-09-29T16:16:00.000Z">
+<meta property="og:updated_time" content="2016-09-29T16:40:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="some problems confuse me in working(第6周summary课题)">
+<meta name="twitter:title" content="some problems confusing for long time at work(第6周summary课题)">
 <meta name="twitter:description" content="1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸1234567+(UIImage *)resizableImageNamed:(NSString *)name&amp;#123;    UIImage *image = [UIImage imageNamed:name];   CGFloat w = image.size.width;">
 <meta name="twitter:image" content="www.coderlychow.com/images/binary_octal_decimal_hexadecimal_conversion_pageone.jpg">
 
@@ -121,7 +121,7 @@
 
   <link rel="canonical" href="www.coderlychow.com/2016/09/30/some-problems-confuse-me-in-working/"/>
 
-  <title> some problems confuse me in working(第6周summary课题) | Life Is An Exploration </title>
+  <title> some problems confusing for long time at work(第6周summary课题) | Life Is An Exploration </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
             
             
               
-                some problems confuse me in working(第6周summary课题)
+                some problems confusing for long time at work(第6周summary课题)
               
             
           </h1>
@@ -284,7 +284,7 @@
 
           
           
-             <span id="/2016/09/30/some-problems-confuse-me-in-working/" class="leancloud_visitors" data-flag-title="some problems confuse me in working(第6周summary课题)">
+             <span id="/2016/09/30/some-problems-confuse-me-in-working/" class="leancloud_visitors" data-flag-title="some problems confusing for long time at work(第6周summary课题)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -307,6 +307,7 @@
 
       
         <h3 id="1-写一个UIImage的category实现对图片top-left-bottom-right的区域进行保护然后拉伸"><a href="#1-写一个UIImage的category实现对图片top-left-bottom-right的区域进行保护然后拉伸" class="headerlink" title="1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸"></a>1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+(UIImage *)resizableImageNamed:(NSString *)name</div><div class="line">&#123;</div><div class="line">    UIImage *image = [UIImage imageNamed:name];</div><div class="line">   CGFloat w = image.size.width;</div><div class="line">    CGFloat h = image.size.height;</div><div class="line">    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(0.5*h, 0.5*w,0.5*h, 0.5*w)];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="2-iOS-presentViewController-reverts-navBar-from-new-64px-bar-back-to-old-44px-version"><a href="#2-iOS-presentViewController-reverts-navBar-from-new-64px-bar-back-to-old-44px-version" class="headerlink" title="2.iOS presentViewController reverts navBar from new 64px bar back to old 44px version"></a>2.iOS presentViewController reverts navBar from new 64px bar back to old 44px version</h2><h5 id="我遇到这个问题最初是项目中某个界面要支持转屏导致的-不转屏幕就没有问题-于是stackoverFlow事实上我并得到有用的建议-于是乎我就自己写了一个简化版的demo-只支持几个界面的跳转-presentViewController再回来竟然没问题-一阵狂喜这意味着一定是我代码写的有毛病-最后排查到"><a href="#我遇到这个问题最初是项目中某个界面要支持转屏导致的-不转屏幕就没有问题-于是stackoverFlow事实上我并得到有用的建议-于是乎我就自己写了一个简化版的demo-只支持几个界面的跳转-presentViewController再回来竟然没问题-一阵狂喜这意味着一定是我代码写的有毛病-最后排查到" class="headerlink" title="我遇到这个问题最初是项目中某个界面要支持转屏导致的,不转屏幕就没有问题.于是stackoverFlow事实上我并得到有用的建议,于是乎我就自己写了一个简化版的demo,只支持几个界面的跳转,presentViewController再回来竟然没问题,一阵狂喜这意味着一定是我代码写的有毛病.最后排查到"></a>我遇到这个问题最初是项目中某个界面要支持转屏导致的,不转屏幕就没有问题.于是stackoverFlow事实上我并得到有用的建议,于是乎我就自己写了一个简化版的demo,只支持几个界面的跳转,presentViewController再回来竟然没问题,一阵狂喜这意味着一定是我代码写的有毛病.最后排查到</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div></pre></td></tr></table></figure>
 <h5 id="这个方法时发现两个方法的返回值不同-方法需要返回一个UIInterfaceOrientationMask类型的enum-我给返回了一个UIInterfaceOrientationPortrait-返回类型错误导致了这样的问题"><a href="#这个方法时发现两个方法的返回值不同-方法需要返回一个UIInterfaceOrientationMask类型的enum-我给返回了一个UIInterfaceOrientationPortrait-返回类型错误导致了这样的问题" class="headerlink" title="这个方法时发现两个方法的返回值不同,方法需要返回一个UIInterfaceOrientationMask类型的enum,我给返回了一个UIInterfaceOrientationPortrait,返回类型错误导致了这样的问题"></a>这个方法时发现两个方法的返回值不同,方法需要返回一个UIInterfaceOrientationMask类型的enum,我给返回了一个UIInterfaceOrientationPortrait,返回类型错误导致了这样的问题</h5><p><strong>以下方法写在自定义的导航控制器里</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-(BOOL)shouldAutorotate</div><div class="line">&#123;</div><div class="line"> return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//正确的enumeration返回类型</div><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationMaskPortrait;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//错误的enumeration返回类型</div><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationPortrait;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -401,7 +402,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/09/30/some-problems-confuse-me-in-working/"
-           data-title="some problems confuse me in working(第6周summary课题)" data-url="www.coderlychow.com/2016/09/30/some-problems-confuse-me-in-working/">
+           data-title="some problems confusing for long time at work(第6周summary课题)" data-url="www.coderlychow.com/2016/09/30/some-problems-confuse-me-in-working/">
       </div>
     
   </div>
