@@ -249,6 +249,152 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/30/some-problems-confuse-me-in-working/" itemprop="url">
+                  some problems confuse me in working
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T00:07:11+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/some-problems-confuse-me-in-working/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/some-problems-confuse-me-in-working/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/30/some-problems-confuse-me-in-working/" class="leancloud_visitors" data-flag-title="some problems confuse me in working">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-写一个UIImage的category实现对图片top-left-bottom-right的区域进行保护然后拉伸"><a href="#1-写一个UIImage的category实现对图片top-left-bottom-right的区域进行保护然后拉伸" class="headerlink" title="1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸"></a>1.写一个UIImage的category实现对图片top,left.bottom,right的区域进行保护然后拉伸</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+(UIImage *)resizableImageNamed:(NSString *)name</div><div class="line">&#123;</div><div class="line">    UIImage *image = [UIImage imageNamed:name];</div><div class="line">   CGFloat w = image.size.width;</div><div class="line">    CGFloat h = image.size.height;</div><div class="line">    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(0.5*h, 0.5*w,0.5*h, 0.5*w)];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2-iOS-presentViewController-reverts-navBar-from-new-64px-bar-back-to-old-44px-version"><a href="#2-iOS-presentViewController-reverts-navBar-from-new-64px-bar-back-to-old-44px-version" class="headerlink" title="2.iOS presentViewController reverts navBar from new 64px bar back to old 44px version"></a>2.iOS presentViewController reverts navBar from new 64px bar back to old 44px version</h2><h5 id="我遇到这个问题最初是项目中某个界面要支持转屏导致的-不转屏幕就没有问题-于是stackoverFlow事实上我并得到有用的建议-于是乎我就自己写了一个简化版的demo-只支持几个界面的跳转-presentViewController再回来竟然没问题-一阵狂喜这意味着一定是我代码写的有毛病-最后排查到"><a href="#我遇到这个问题最初是项目中某个界面要支持转屏导致的-不转屏幕就没有问题-于是stackoverFlow事实上我并得到有用的建议-于是乎我就自己写了一个简化版的demo-只支持几个界面的跳转-presentViewController再回来竟然没问题-一阵狂喜这意味着一定是我代码写的有毛病-最后排查到" class="headerlink" title="我遇到这个问题最初是项目中某个界面要支持转屏导致的,不转屏幕就没有问题.于是stackoverFlow事实上我并得到有用的建议,于是乎我就自己写了一个简化版的demo,只支持几个界面的跳转,presentViewController再回来竟然没问题,一阵狂喜这意味着一定是我代码写的有毛病.最后排查到"></a>我遇到这个问题最初是项目中某个界面要支持转屏导致的,不转屏幕就没有问题.于是stackoverFlow事实上我并得到有用的建议,于是乎我就自己写了一个简化版的demo,只支持几个界面的跳转,presentViewController再回来竟然没问题,一阵狂喜这意味着一定是我代码写的有毛病.最后排查到</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div></pre></td></tr></table></figure>
+<h5 id="这个方法时发现两个方法的返回值不同-方法需要返回一个UIInterfaceOrientationMask类型的enum-我给返回了一个UIInterfaceOrientationPortrait-返回类型错误导致了这样的问题"><a href="#这个方法时发现两个方法的返回值不同-方法需要返回一个UIInterfaceOrientationMask类型的enum-我给返回了一个UIInterfaceOrientationPortrait-返回类型错误导致了这样的问题" class="headerlink" title="这个方法时发现两个方法的返回值不同,方法需要返回一个UIInterfaceOrientationMask类型的enum,我给返回了一个UIInterfaceOrientationPortrait,返回类型错误导致了这样的问题"></a>这个方法时发现两个方法的返回值不同,方法需要返回一个UIInterfaceOrientationMask类型的enum,我给返回了一个UIInterfaceOrientationPortrait,返回类型错误导致了这样的问题</h5><p><strong>以下方法写在自定义的导航控制器里</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-(BOOL)shouldAutorotate</div><div class="line">&#123;</div><div class="line"> return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//正确的enumeration返回类型</div><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationMaskPortrait;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//错误的enumeration返回类型</div><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationPortrait;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-设置界面的滑轮效果借助于UIBezierPath实现"><a href="#3-设置界面的滑轮效果借助于UIBezierPath实现" class="headerlink" title="3.设置界面的滑轮效果借助于UIBezierPath实现"></a><strong>3.设置界面的滑轮效果借助于UIBezierPath实现</strong></h3><h5 id="效果-KTV通常会给无趣的人们增加一些增添趣味的道具-而这道具又会给一些无胆鼠辈必须亲一下-抱一下的合理的理由-不过这个道具我好喜欢-倘若有一天我家祖坟上能冒青烟-我能掌控娱乐产业的半壁江山-一定会在转盘上加一项”打一炮”-咱们要说的就是那个转盘-要实现转动的效果-怎么做到呢-有很多方法包括矩形旋转一定的角度-有几个item-依次偏移2PI-item和弧度即可-今天介绍一种更简单的方法通过-UIBezierPath曲线实现"><a href="#效果-KTV通常会给无趣的人们增加一些增添趣味的道具-而这道具又会给一些无胆鼠辈必须亲一下-抱一下的合理的理由-不过这个道具我好喜欢-倘若有一天我家祖坟上能冒青烟-我能掌控娱乐产业的半壁江山-一定会在转盘上加一项”打一炮”-咱们要说的就是那个转盘-要实现转动的效果-怎么做到呢-有很多方法包括矩形旋转一定的角度-有几个item-依次偏移2PI-item和弧度即可-今天介绍一种更简单的方法通过-UIBezierPath曲线实现" class="headerlink" title="效果:KTV通常会给无趣的人们增加一些增添趣味的道具,而这道具又会给一些无胆鼠辈必须亲一下,抱一下的合理的理由.不过这个道具我好喜欢,倘若有一天我家祖坟上能冒青烟,我能掌控娱乐产业的半壁江山,一定会在转盘上加一项”打一炮”,咱们要说的就是那个转盘.要实现转动的效果,怎么做到呢?有很多方法包括矩形旋转一定的角度,有几个item,依次偏移2PI/item和弧度即可.今天介绍一种更简单的方法通过*UIBezierPath曲线实现"></a>效果:KTV通常会给无趣的人们增加一些增添趣味的道具,而这道具又会给一些无胆鼠辈必须亲一下,抱一下的合理的理由.不过这个道具我好喜欢,倘若有一天我家祖坟上能冒青烟,我能掌控娱乐产业的半壁江山,一定会在转盘上加一项”打一炮”,咱们要说的就是那个转盘.要实现转动的效果,怎么做到呢?有很多方法包括矩形旋转一定的角度,有几个item,依次偏移2<em>PI/item和弧度即可.今天介绍一种更简单的方法通过<em>*UIBezierPath曲线实现</em></em></h5><h4 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h4><h5 id="1-UIBezierPath有一个属性叫做currentPoint-这个属性就是-UIBezierPath结束位置所在的坐标-我们如果在这个位置上放一个button-并让button-center-currentPoint-就会发现这个button的运动轨迹就在曲线上了"><a href="#1-UIBezierPath有一个属性叫做currentPoint-这个属性就是-UIBezierPath结束位置所在的坐标-我们如果在这个位置上放一个button-并让button-center-currentPoint-就会发现这个button的运动轨迹就在曲线上了" class="headerlink" title="1.UIBezierPath有一个属性叫做currentPoint,这个属性就是**UIBezierPath结束位置所在的坐标.我们如果在这个位置上放一个button,并让button.center=currentPoint,就会发现这个button的运动轨迹就在曲线上了."></a><strong>1.UIBezierPath有一个属性叫做currentPoint,这个属性就是**</strong>UIBezierPath结束位置所在的坐标.我们如果在这个位置上放一个button,并让button.center=currentPoint,就会发现这个button的运动轨迹就在曲线上了.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UIBezierPath *bezierPath =[UIBezierPath bezierPathWithArcCenter:centerPoint</div><div class="line">                                                             radius:radius</div><div class="line">                                                         startAngle:startAngle</div><div class="line">                                                           endAngle:ridians</div><div class="line">                                                          clockwise:YES];</div></pre></td></tr></table></figure>
+<h5 id="2-我们给UIBezierPath设置的其实是圆心-半径-开始位置弧度-结束位置的弧度-顺时针还是逆时针旋转-这样就很容易明白决定圆弧位置的其实是结束位置的弧度-我们先让一个item移动制定的弧度-怎么做到呢-很容易想到是添加手势-那么手势添加在哪-添加到哪取决于我们添加手势的目的-我们添加手势的目的是获取触屏点相对于参照点-contrastPoint-弧度的变化值从而用这个变化值delta模拟旋转的效果"><a href="#2-我们给UIBezierPath设置的其实是圆心-半径-开始位置弧度-结束位置的弧度-顺时针还是逆时针旋转-这样就很容易明白决定圆弧位置的其实是结束位置的弧度-我们先让一个item移动制定的弧度-怎么做到呢-很容易想到是添加手势-那么手势添加在哪-添加到哪取决于我们添加手势的目的-我们添加手势的目的是获取触屏点相对于参照点-contrastPoint-弧度的变化值从而用这个变化值delta模拟旋转的效果" class="headerlink" title="2.我们给UIBezierPath设置的其实是圆心,半径,开始位置弧度,结束位置的弧度,顺时针还是逆时针旋转,这样就很容易明白决定圆弧位置的其实是结束位置的弧度,我们先让一个item移动制定的弧度,怎么做到呢?很容易想到是添加手势,那么手势添加在哪?添加到哪取决于我们添加手势的目的,我们添加手势的目的是获取触屏点相对于参照点(contrastPoint)弧度的变化值从而用这个变化值delta模拟旋转的效果."></a><strong>2.我们给</strong>UIBezierPath设置的其实是圆心,半径,开始位置弧度,结束位置的弧度,顺时针还是逆时针旋转,这样就很容易明白决定圆弧位置的其实是结束位置的弧度,我们先让一个item移动制定的弧度,怎么做到呢?很容易想到是添加手势,那么手势添加在哪?添加到哪取决于我们添加手势的目的,我们添加手势的目的是获取触屏点相对于参照点(contrastPoint)弧度的变化值从而用这个变化值delta模拟旋转的效果.</h5><blockquote>
+<p>a.手势开始时我们记录一下开始的弧度,弧度怎么计算?</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">float dx = touchPoint.x  - contrast point.x;</div><div class="line">float dy = touchPoint.y  - contrastPointy;</div><div class="line">touchRadians = atan2(dy,dx); //这样计算出来的就是触摸点相对参照点的弧度</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>b.手势在滑动的过程中相对于参照点的弧度值会不断变化,我们就可以计算弧度的变化值.(重申一下我们是用手势变化弧度去设置item位置变化的,在这个过程中和item的位置完全没关系,item只是一个被设置的对象而已),我们就可以用item的默认结束弧度(我们设置的默认初始位置和手势的开始位置无关,之所以记录手势开始的弧度值是因为我们想要获取变化的弧度值)加上delta弧度变化值就是当前item的结束位置弧度,我们获取新的结束位置的坐标**</strong>currentPoint赋值给item,就可以看到实时转到的效果</p>
+<p><strong>c.手势结束时,我们判断最终的结束弧度位置在哪一个区域(比如有7个item,就是判断在 (2*PI)/7这个区域还是在其他的等分区域</strong>),每个区域都有一个圆弧的中心店,手势结束时判断item结束弧度的值所在哪个区域给一个动画结束时滑到该区域圆弧的中心点即可.</p>
+</blockquote>
+<h4 id="3-我们就可以根据需求-比如需要7个item-那么以第一个endAngle为基准值-依次加-2-PI-7弧度值-不就是圆上的7个item了吗"><a href="#3-我们就可以根据需求-比如需要7个item-那么以第一个endAngle为基准值-依次加-2-PI-7弧度值-不就是圆上的7个item了吗" class="headerlink" title="3.我们就可以根据需求(比如需要7个item),那么以第一个endAngle为基准值,依次加(2*  PI)/7弧度值,不就是圆上的7个item了吗"></a>3.我们就可以根据需求(比如需要7个item),那么以第一个endAngle为基准值,依次加(2*  PI)/7弧度值,不就是圆上的7个item了吗</h4><h2 id="4-指定某一个界面横屏-其他界面竖屏"><a href="#4-指定某一个界面横屏-其他界面竖屏" class="headerlink" title="4.指定某一个界面横屏,其他界面竖屏"></a><strong>4.指定某一个界面横屏,其他界面竖屏</strong></h2><p><strong>开始之前先谈下感受,这是一个恶心我小两周的问题,根据我的工作原则白天搞不定的事情不要浪费太多时间,毕竟上班还是有很多事情要做的,于是我只有晚上回去用两个小时去搞了,这可是我原本可以看看书,跑跑步甚至做一写自己喜欢事情的美好时光啊,问题搞定之前这些事情都要暂停这是原则.那么好奇的读者就要问了?你最后一定搞定了吧!事实上只能说解决了项目问题,对深层次的原理还是没搞太懂,比如为什么子控制器要受到根控制器的深远影响.有些脾气不好的同学就要说了,你他妈没彻底搞懂你写个毛啊!浪费老子的时间.我老大说过你在项目中肯定会遇到一些问题你当时解决了有些地方可能模棱两可,这时你就要在业余时间,记住啊是业余时间!自己花心思把他彻底搞懂这样的话,这次你做这个项目可能花费一个月下次可能一周就搞定了,你要是稀里糊涂的解决了出现问题你很难追踪,最关键的是以后每次你遇到类似问题都要花上一个月时间解决.不要懒省事坑的都是自己.结论是:有效的积累在于不放过任何一个遇到的问题并把他们彻底搞懂. 我觉得他说的挺对的.下面就说说我在这小两周的晚上都搞懂了什么吧</strong></p>
+<blockquote>
+<p>1.要捋清楚控制器之间的层级关系,特别是有导航控制器和Modal控制器相互掺杂的情况,子控制器在最顶层(你现在看到的那个控制器视图)支持旋转的时候,它的根控制器要支持旋转</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(BOOL)shouldAutorotate</div><div class="line">&#123;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationMaskAll;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2.方向要设置正确</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-(UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">//    return UIInterfaceOrientationPortrait;  错误</div><div class="line">    return UIInterfaceOrientationMaskPortrait;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>3.由于每次旋转都会调用根控制器的-(BOOL)shouldAutorotate方法询问最顶层的控制器(你当前看到的控制器视图)是否支持旋转,这样你就要在这个方法里判断最顶层是哪一个控制器,是不是支持旋转的那一个</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">-(BOOL)shouldAutorotate</div><div class="line">&#123;</div><div class="line"> //判断出是不是communicationVC 是的话旋转  不是的话不旋转</div><div class="line">     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;</div><div class="line">     UIViewController *vc = keyWindow.rootViewController;</div><div class="line">      while (vc.presentedViewController) &#123;</div><div class="line">       vc = vc.presentedViewController;</div><div class="line">        if ([vc isKindOfClass:[UINavigationController class]]) &#123;</div><div class="line">            vc = [(UINavigationController *)vc visibleViewController];</div><div class="line">        &#125; else if ([vc isKindOfClass:[UITabBarController class]]) &#123;</div><div class="line">            vc = [(UITabBarController *)vc selectedViewController];</div><div class="line">        &#125;</div><div class="line"> &#125;</div><div class="line">      UIViewController *topmostVC = vc;</div><div class="line">    //判断是否是 SWSpecificVC 是的话能够旋转</div><div class="line">       if ([topmostVC isMemberOfClass:[SWSpecificVC class]]) &#123;</div><div class="line">       return YES;</div><div class="line">   &#125;</div><div class="line">    return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>4.如果在程序窗口的根控制器加了两个控制器视图,如果直接addSubView,再弹出控制器会出现问题,此时追踪子控制器的根控制器会有问题,此时需要</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self addChildViewController:];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>5.强制转屏—&gt;从横屏退出时,强制设置为竖屏,否则会导致根控制器转屏出现横屏</p>
+<p>例如:从控制器A进入控制器B的时候—-&gt;把B强制转换成横屏—-&gt;返回的时候—&gt;需要在A出现的时候再转换为原来的方向.不然会有问题,个人建议可以在B的viewWillAppear调用这个方法,转换屏幕(例如转换为横屏),然后在A的viewWillAppear中转换回来</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)orientationToPortrait:(UIInterfaceOrientation)orientation &#123;</div><div class="line">    SEL selector = NSSelectorFromString(@&quot;setOrientation:&quot;);</div><div class="line">    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice            instanceMethodSignatureForSelector:selector]];</div><div class="line">    [invocation setSelector:selector];</div><div class="line">    [invocation setTarget:[UIDevice currentDevice]];</div><div class="line">    int val = orientation;</div><div class="line">    [invocation setArgument:&amp;val atIndex:2];//前两个参数已被target和selector占用</div><div class="line">    [invocation invoke];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="6-iOS基础知识彻底搞懂之define-amp-amp-const的正确使用"><a href="#6-iOS基础知识彻底搞懂之define-amp-amp-const的正确使用" class="headerlink" title="6.iOS基础知识彻底搞懂之define&amp;&amp;const的正确使用"></a>6.iOS基础知识彻底搞懂之define&amp;&amp;const的正确使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">const NSString *HSCoder = @&quot;汉斯哈哈哈&quot;;</div><div class="line"></div><div class="line">全局常量：不管你定义在任何文件夹，外部都能访问</div><div class="line"></div><div class="line">static const NSString *HSCoder = @&quot;汉斯哈哈哈&quot;;</div><div class="line"></div><div class="line">局部常量：用static修饰后，不能提供外界访问</div><div class="line"></div><div class="line">1.const NSString *HSCoder = @&quot;汉斯哈哈哈&quot;;</div><div class="line">2.NSString const *HSCoder = @&quot;汉斯哈哈哈&quot;;</div><div class="line">3.NSString * const HSCoder = @&quot;汉斯哈哈哈&quot;;</div><div class="line"></div><div class="line">结论：1和2并没有区别,const右边的总不能被修改</div><div class="line"></div><div class="line">NSString * const HSCoder = @&quot;汉斯哈哈哈&quot;; //所以一般我们定义一个常量又不想被修改应该这样：</div></pre></td></tr></table></figure>
+<h3 id="7-整形和浮点型的2进制、8进制、10进制、16进制相互转换"><a href="#7-整形和浮点型的2进制、8进制、10进制、16进制相互转换" class="headerlink" title="7.整形和浮点型的2进制、8进制、10进制、16进制相互转换"></a>7.整形和浮点型的2进制、8进制、10进制、16进制相互转换</h3><p><img src="/images/binary_octal_decimal_hexadecimal_conversion_pageone.jpg" alt="page one"><br><img src="/images/binary_octal_decimal_hexadecimal_conversion_pagetwo.jpg" alt="page two"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/26/UpdateCognitive/" itemprop="url">
                   UpdateCognitive(第5周Review课题)
                 </a>
@@ -1246,115 +1392,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/17/MacOSX Shortcuts/" itemprop="url">
-                  Mac OSX shortcuts(第4周Research课题)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T20:27:24+08:00" content="2016-09-17">
-              2016-09-17
-            </time>
-          </span>
-
-          
-
-          
-
-          
-
-          
-          
-             <span id="/2016/09/17/MacOSX Shortcuts/" class="leancloud_visitors" data-flag-title="Mac OSX shortcuts(第4周Research课题)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="修改应用的快捷键—-gt-Mac版本的QQ音乐举例："><a href="#修改应用的快捷键—-gt-Mac版本的QQ音乐举例：" class="headerlink" title="修改应用的快捷键—&gt;Mac版本的QQ音乐举例："></a>修改应用的快捷键—&gt;Mac版本的QQ音乐举例：</h3><p>在顶部菜单选项中有一列是播放控制—-&gt;子菜单中有一个下一首选项 它的默认快捷键 Command + -&gt; ，我们把它修改为command + N怎么做呢?</p>
-<blockquote>
-<p>步骤:system preferences—&gt;keyboard—&gt;shortcuts —&gt;App Shortcuts  点击右侧的+当弹出一个对话框时选择你想修改的程序(如:QQ音乐),Menu Title中填写想要修改子菜单的名称(比如:下一首(要和子菜单选项名称一致)),在Keyboard Shortcut键入你想使用的快捷键(如:command + N),点击add生效</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/17/MacOSX Shortcuts/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1393,7 +1437,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
