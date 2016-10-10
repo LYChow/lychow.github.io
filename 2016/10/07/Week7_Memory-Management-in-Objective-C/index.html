@@ -86,16 +86,19 @@
 
 
 
-<meta name="description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;">
+<meta name="description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;
+2.不能使用NSAllocateObject/NSDeallocateObjectalloc实际上就是调用NSAllocateObject函数来生成并持有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Memory Management in Objective-C Part one (第7周Research课题)">
 <meta property="og:url" content="www.coderlychow.com/2016/10/07/Week7_Memory-Management-in-Objective-C/index.html">
 <meta property="og:site_name" content="Life Is An Exploration">
-<meta property="og:description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;">
-<meta property="og:updated_time" content="2016-10-10T13:03:06.000Z">
+<meta property="og:description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;
+2.不能使用NSAllocateObject/NSDeallocateObjectalloc实际上就是调用NSAllocateObject函数来生成并持有">
+<meta property="og:updated_time" content="2016-10-10T16:03:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Memory Management in Objective-C Part one (第7周Research课题)">
-<meta name="twitter:description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;">
+<meta name="twitter:description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;
+2.不能使用NSAllocateObject/NSDeallocateObjectalloc实际上就是调用NSAllocateObject函数来生成并持有">
 
 
 
@@ -334,7 +337,6 @@
 
       
         <h3 id="ARC规则"><a href="#ARC规则" class="headerlink" title="ARC规则"></a>ARC规则</h3><h4 id="1-不能使用retain-release-retainCount-autorelease"><a href="#1-不能使用retain-release-retainCount-autorelease" class="headerlink" title="1.不能使用retain/release/retainCount/autorelease"></a>1.不能使用retain/release/retainCount/autorelease</h4><h5 id="编译器会自动插入上面这些代码"><a href="#编译器会自动插入上面这些代码" class="headerlink" title="编译器会自动插入上面这些代码."></a>编译器会自动插入上面这些代码.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:ARC forbids explicit message send of ‘release&apos;</div></pre></td></tr></table></figure>
-<a id="more"></a>
 <h4 id="2-不能使用NSAllocateObject-NSDeallocateObject"><a href="#2-不能使用NSAllocateObject-NSDeallocateObject" class="headerlink" title="2.不能使用NSAllocateObject/NSDeallocateObject"></a>2.不能使用NSAllocateObject/NSDeallocateObject</h4><p>alloc实际上就是调用NSAllocateObject函数来生成并持有对象.</p>
 <h4 id="3-必须遵守内存管理的方法命名规则"><a href="#3-必须遵守内存管理的方法命名规则" class="headerlink" title="3.必须遵守内存管理的方法命名规则"></a>3.必须遵守内存管理的方法命名规则</h4><p>1.以alloc,new,copy,mutableCopy名称开头在返回对象时,必须返回给调用方所应当持有的对象.这在ARC也是适用的.</p>
 <p>2.不过ARC追加了一条命名规则.以init开始的方法规则必须是实例方法必须要返回对象.返回的对象应该为id类型或该方法声明类的对象类型,或者是该类的超类和子类类型.</p>
@@ -490,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/07/Memory-Management-in-Objective-C/" rel="next" title="Memory Management in Objective-C(第7周Research课题)">
-                <i class="fa fa-chevron-left"></i> Memory Management in Objective-C(第7周Research课题)
+              <a href="/2016/09/30/Week6_some-problems-confuse-me-in-working/" rel="next" title="some problems was persecuted me for long time at work(第6周Summary课题)">
+                <i class="fa fa-chevron-left"></i> some problems was persecuted me for long time at work(第6周Summary课题)
               </a>
             
           </div>
