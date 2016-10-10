@@ -1,0 +1,834 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google7dbb8a5329ef9b78.html" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="做事的方法选择的判断标准:节省注意力(别人花时间整理好的资源)&amp;gt;节省时间(自己花时间整理)&amp;gt;自己花钱
+选择的判断标准有一个就够了：我选择的事能不能让我积累更多的能力。没有能力积累的努力就是原地踏步，是不可能跨越里程碑的。
+选择的判断标准有一个就够了：我选择的事情能不能让我积累更多的能力？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ExactProcedure(第5周Review课题)">
+<meta property="og:url" content="www.coderlychow.com/2016/09/25/Week5_ExactProcedure/index.html">
+<meta property="og:site_name" content="Life Is An Exploration">
+<meta property="og:description" content="做事的方法选择的判断标准:节省注意力(别人花时间整理好的资源)&amp;gt;节省时间(自己花时间整理)&amp;gt;自己花钱
+选择的判断标准有一个就够了：我选择的事能不能让我积累更多的能力。没有能力积累的努力就是原地踏步，是不可能跨越里程碑的。
+选择的判断标准有一个就够了：我选择的事情能不能让我积累更多的能力？">
+<meta property="og:updated_time" content="2016-09-26T14:19:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ExactProcedure(第5周Review课题)">
+<meta name="twitter:description" content="做事的方法选择的判断标准:节省注意力(别人花时间整理好的资源)&amp;gt;节省时间(自己花时间整理)&amp;gt;自己花钱
+选择的判断标准有一个就够了：我选择的事能不能让我积累更多的能力。没有能力积累的努力就是原地踏步，是不可能跨越里程碑的。
+选择的判断标准有一个就够了：我选择的事情能不能让我积累更多的能力？">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6332761207551821000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="www.coderlychow.com/2016/09/25/Week5_ExactProcedure/"/>
+
+  <title> ExactProcedure(第5周Review课题) | Life Is An Exploration </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '84595258', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Life Is An Exploration</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">只不过是一场游戏</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'WFjz5j_iq3KdG8zjmBXr','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ExactProcedure(第5周Review课题)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-25T23:10:21+08:00" content="2016-09-25">
+              2016-09-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/25/Week5_ExactProcedure/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/25/Week5_ExactProcedure/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/25/Week5_ExactProcedure/" class="leancloud_visitors" data-flag-title="ExactProcedure(第5周Review课题)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="做事的方法"><a href="#做事的方法" class="headerlink" title="做事的方法"></a>做事的方法</h1><h3 id="选择的判断标准"><a href="#选择的判断标准" class="headerlink" title="选择的判断标准:"></a>选择的判断标准:</h3><p>节省注意力(别人花时间整理好的资源)&gt;节省时间(自己花时间整理)&gt;自己花钱</p>
+<p>选择的判断标准有一个就够了：我选择的事能不能让我积累更多的能力。没有能力积累的努力就是原地踏步，是不可能跨越里程碑的。</p>
+<p>选择的判断标准有一个就够了：我选择的事情能不能让我积累更多的能力？<br><a id="more"></a><br>所以你的每一个选择都要从积累能力的角度出发，每一次选择都要考虑自己还需要什么能力？以及新的选择对于对于自己发展已有能力有没有帮助？</p>
+<p>正确的思考方式应该是：这个选择之后能帮我完善哪个已有能力，能让我获得什么新的能力。</p>
+<p>第二条铁律：重视价值，忽略估值。不要让自己的估值过分超过自己的价值。</p>
+<p>因为你在意你的估值时，你就会忘记你的价值。就会不由自主做那些提高你估值的事，而不是想办法提高你的价值。长期来看估值是虚幻的，虽有波动却实际上锚定在价值之上，价值不增长估计一定上不去。</p>
+<p>反过来来看，不顾价值追求估值本质上就是选择做骗子。所有的欺骗都长久不了，都有水落石出的那一天。</p>
+<h3 id="目标摆正确了才会有结果"><a href="#目标摆正确了才会有结果" class="headerlink" title="目标摆正确了才会有结果:"></a>目标摆正确了才会有结果:</h3><p>因为不会挣钱的脑子生病的都可以归结为：关注错了焦点。写书，真的不应该是为了出名，也不应该是为了证明自己有多牛，真正的目标，应该是为了让读者有所收获。</p>
+<p>宏观看来，个体价值等于社会贡献率。 翻译过来就是：先别问你能赚多少钱，先好好问问你为社会做了什么贡献？ </p>
+<p>我知道，我没有那么大的社会贡献，所以我会感到惶恐，所以我会自卑，所以我得了另一种病：不配。</p>
+<p>好在，所有的“不配”都只是观念和时间的问题。发现这个病之后，你自然找到了解决方法——做出更多贡献，做出配得上你想要的财富的贡献。</p>
+<p>把注意力放在对整个社会有贡献的事情上面。个体价值等于他的社会贡献率，价格趋同是早晚的事。</p>
+<p>为什么这么多年你还是像无头苍蝇不停的飞行却一直无法靠近它，因为你连你自己要的是什么都不知道。</p>
+<p>在正式跋涉旅程之前想清楚方向会让你事半功倍，不再和世上大部分人一样，做着无头苍蝇一样的飞行。</p>
+<p>我有个习惯，做任何事情的时候，都要花很长时间去想做那事儿的意义，甚至经常主动赋予那件事儿至少一个“非凡的意义” —— 这样的好处是会让自己不由自主地进入“不做好就很难受”的状态。</p>
+<p>做有意义的事儿，你会不由自主地更用力。</p>
+<h3 id="榜样最有效-行动最有说服力"><a href="#榜样最有效-行动最有说服力" class="headerlink" title="榜样最有效,行动最有说服力:"></a>榜样最有效,行动最有说服力:</h3><p>你什么样你孩子就什么样,你想让你孩子学英语那你就去学。如果你平时非常注意自己的注意力成本，孩子在成长的过程中受到感染，榜样的力量是无穷的。</p>
+<p>远离那些只会用嘴道歉的人，一个人的理念最终反映到行动上才算真正落实，不然就只是过过嘴瘾。</p>
+<p>真正的道歉不是用嘴说的，而是用行动道歉弥补过失，甚至比原来更好。就好像你和姑娘表白说你喜欢她，然后人家说考虑一下你却连个早餐都不送，一句关心的话都没有。你竟然说你喜欢她.～呸！做要比说难的多但就是有少数人会去做,所以最终也只有少数人能够活在未来。</p>
+<p>怎样才成让人敬佩的人:有没有人听你说话，很可能不取决于你说的对不对，而在于你有没有说话的资格。想让你接近你听你说话最好的方法就是时不时做出令人敬佩的事情。这是赢得别人尊重最好的方法，最终会让你成为那个有资格说话的人。</p>
+<p>没有在一件事上花够时间就没有发言权:当你还没有取得成绩的时候，没有人会重视你的建议。因为你并没有资格。人是经验养大的,对一件事又没有发言权的唯一标准是没有在这件事上花够时间.抛开智力因素不讲。人家用时间打磨技能，你不用时间凭什么会是你。</p>
+<h3 id="好的思路能够大大减轻做事情的难度"><a href="#好的思路能够大大减轻做事情的难度" class="headerlink" title="好的思路能够大大减轻做事情的难度:"></a>好的思路能够大大减轻做事情的难度:</h3><p>好的战略能够大大缓解执行的难度。好的思路也能够大大减轻做事情的难度。</p>
+<p>那些做事的人脑子里只有一个概念就是具体，多复杂的事都能给分解具体了,不做事的人多简单的事都能给你搞抽象了</p>
+<p>有些东西关键套路非常有限,逻辑性强看懂了就容易掌握和使用.</p>
+<p>一个动作曲子分解成很多小块,一块一块的反复练习.这种训练一定要慢,只有慢下来才能感知技能的内部结构,注意到自己的错误.</p>
+<p>功夫就在功夫上,学什么就要练什么,追求的就是把这个特殊的技能的神经网络长在脑子里.也就是在脑子里形成沟回</p>
+<p>严谨的逻辑能帮你更好地预测未来。</p>
+<p>尊重事实相信逻辑会让你距离未来更近一些，犯过错误认真对待反思之后才能够成长。</p>
+<p>结果=思维方式<em>热情</em>能力 思维方式的取值范围(-100～100)热情和能力的取值范围(0～100)</p>
+<p>一个人的思维方式决定了他对事情的看法和态度以及为之付出努力的程度</p>
+<p>写作是为了帮自己理清思路，最重要的是深入思考，除了深入思考最重要的是付诸实践。从开始的时候迫切需要到后来的自我挑战和喜欢。</p>
+<p>有些东西其实没有想清楚，这是只有写作表达才能感受的东西(做事才能有反馈,才知道自己目前哪里不行)。</p>
+<p>不断提问你的目的是什么,答案就在不断提问之中.搞清楚了问题答案也就在其中了！你为什么想要加薪你可能是怕你老婆看不起你，往往会在提要求时忘记真正的原因了。</p>
+<h3 id="修正观念改变自然而然"><a href="#修正观念改变自然而然" class="headerlink" title="修正观念改变自然而然:"></a>修正观念改变自然而然:</h3><p>一个人能不能把做出的一些改变坚持下去取决于观念有没有真的改变，观念没有改变靠毅力做出一些改变坚持不了多久还是会回到原来的状态，原因是靠毅力意味着痛苦的累积。痛苦的持续累积意味着放弃只是一个时间问题。</p>
+<p>观念转变了这个所谓的突破就自然而然了，甚至是不做不行的决定。观念没有改变顶多就是“坚持”一阵子，而后一如既往地自然而然的放弃</p>
+<p>努力摒弃掉污染大脑的观念，经常给自己洗洗脑，时常警惕自己是不是被那些个歪理邪说把自己给限制了</p>
+<p>首先，我告诉自己，每当我觉得赚钱困难的时候，肯定是我生病了。而且是脑子生病了。</p>
+<p>发现这些病本身，就距离治好非常近了，剩余的那些，也是有方法不难医治。怕只怕，不知道或是不承认自己有病，也不想办法治疗，最终本来不是什么事儿的问题，竟然成了“不治之症”。</p>
+<p>我们珍惜使用自己的注意力最终目标是为了获得成长，成长恰恰需要拓展和加深自己的能力圈。许多人认为不关注身边的人和窗外事就是专注自己，其实也是错了。这种只冷淡的关注自己是很可能伤害到未来的成长机会的。</p>
+<p>人都是观念的产物，脑子里没这个概念你是根本不会为一些东西感到烦恼的，儿时接触到的观念是对女孩儿有礼貌、不能坐一块授受不亲的观念导致很多男人并不清楚有些事情是男欢女爱的，一些错误观念的影响导致下手不彻底，事后成傻逼。原则是不怀孕就好。</p>
+<p>明明谈恋爱就是个图高兴的事，却很严肃的对待出一点差错就要生气  结婚是个重要的系统的工程  有些人却随随便便结婚  这就是搞反了</p>
+<p>我们原以为是优势的资历会成为我们迈出下一步的阻碍，这种情况不妨这样想，把七年看成一辈子，这一辈子是工程师，下一辈子是销售也无妨。积累固然重要但不要把自己给限制住。我就相信自己会有好运气的人…</p>
+<p>情商差不过是脑力不够所以思考不全面不深入于是出现了意外的不良后果。</p>
+<p>要想修正向人求助是麻烦别人这种观念上的偏差，最好的办法是试着多去帮助别人，看看这个过程是不是只有麻烦没有收获。如果发现别人向自己求助不一定是麻烦自己就能明白自己向别人求助也不是麻烦别人。别人向你表达好感是在骚扰你吗？别人向你提出合理性需求你觉得是在强奸你吗？真诚的求助通常不会带来别人的反感，我们反感的是打着求助的旗号，占着别人的便宜。</p>
+<p>人们反感的不是广告本身，而是不断打扰你向你推荐劣质产品。</p>
+<p>如果改不掉一个错误的观念就不如用一个新概念去替代它，比如用暂时不成功替代失败。用暂时还不喜欢自己代替拒绝。用一个好习惯来吸引自己的注意力，那些坏习惯占用注意力的时间自然就减少了。还记得当年停止抽烟时的心情{九年来 尤其是最近三四年 我每天都在假装抽烟 每天一盒左右的尼古丁摄入量 对身体的伤害 精神的摧残 是巨大的 不可逆的 早应该 停止伤害自己}</p>
+<p>投资尤其是好的投资，一定是舍我其谁的活动。基本概念的偏差如果没有纠正的话，以后即使碰到“财富自由”的机会也是把握不住的。</p>
+<p>所谓高瞻远瞩的结果不过是一次次被动选择:能够在顺境中保持居安思危的人不多，一次次看似英明的决策不过是一次次被逼无奈的被动选择。</p>
+<p>觉得自己比别人强只不过可能局部比别人强,整体比别人垃圾的多。不然为什么你挣得少你不是领导.</p>
+<h3 id="策略"><a href="#策略" class="headerlink" title="策略:"></a>策略:</h3><p>精明的交易在交易之前都要知道两个最基本的事。交易的底线，让自己利益最大化的交易法则(strategy).</p>
+<p>发现问题是避免问题的开始。研究失败的案例虽然不太好找，失败的原因只有那么几种，做成事情的原因却千千万并且不可模仿。</p>
+<h3 id="看热闹还是看门道"><a href="#看热闹还是看门道" class="headerlink" title="看热闹还是看门道:"></a>看热闹还是看门道:</h3><p>我遇上好内容肯定会阅读好多好多遍，哪怕是看剧看片我这种人都会反复去刷，看片的时候还要关上窗户和手机。</p>
+<p>阅读本身并没有价值，关键是阅读之后的思考，思考之后的选择，选择之后的行动才有价值。只有持续正确的行动才可能有积累效果，才可能引发真正意义上的变化。</p>
+<p>你所支付的更宝贵的东西，在未来很多个星期你所耗费在阅读、思考、决策和行动上的精力。</p>
+<h3 id="教是最好的学习方法-帮助别人的那一刻已有回报"><a href="#教是最好的学习方法-帮助别人的那一刻已有回报" class="headerlink" title="教是最好的学习方法,帮助别人的那一刻已有回报:"></a>教是最好的学习方法,帮助别人的那一刻已有回报:</h3><p>真正开始做功课其实就会发现需要补充的资料还有很多，我们就会摆脱盲从，开始认真对待每一个观点。</p>
+<p>向别人求助其实也是在帮助别人，怎样有水平的求助就显得至关重要了。从此以后不再追钱，把所有的注意力放在自己的成长和提升上。别人问就帮他解决，解决不了的就一起找其他人解决。</p>
+<p>帮助别人是一个共同进步的过程，不是你赢我输的过程，再说教永远是是最好的学习方法。上学时学习最好的学生一定是被别人麻烦最多的，而不是那些摆出一副‘我要学习，别来烦我’的臭架子的人。(我猜这种观念大概是体力、脑力不同导致)你是什么样的人就会以为别人也是什么样的人，那么我先真诚。因为我特别愿意帮助别人，所以我一直都不耻于向别人求助。</p>
+<p>帮助别人不但能够巩固学到的东西，还能从别人的提问中更深的思考问题，别人不明白时你会类比更深入的去思考怎么把这个东西讲清楚，或者讲不清楚时才能得到即时反馈在这个问题上你以为你懂了其实并没有完全懂，从而再去深入学习。</p>
+<p>班里被麻烦最多的通常是学习最好的，第二第三通常藏着掖着，害怕被别人超越。他们并不知道分享带来的好处。</p>
+<p>我看到了别人被帮助后儿子的那种崇拜，至今让我清晰的记得那个月朗星稀的夜晚。被需要也是一种需求，享受自我实现的感觉。</p>
+<h3 id="用笃信的原则指导自己的行为"><a href="#用笃信的原则指导自己的行为" class="headerlink" title="用笃信的原则指导自己的行为:"></a>用笃信的原则指导自己的行为:</h3><p>应该笃信哪些原则:一个事情过去它是成立的，现在它是成立的，我很愿意相信它将来也是成立的，于是我就按照这个道理行事在这个层面上我就活在了未来，我用了一个最简单的策略做出了成功概率最大化的预测。</p>
+<p>认真琢磨那些朴素的，永恒的，乃至被人们当做耳旁风当做陈词滥调的道理，研究透了相对于瞬间穿越到了未来，因为那些道理在未来依然成立。</p>
+<p>只要确信自己做的是正确的事情，就不爱担心是否马上起到了作用，给他们一点时间。</p>
+<p>若经过思考认为他们是对的，就要笃信并且按照道理践行自己的生活。</p>
+<p>一个人是否真的相信某种理念，最终只有一种体现：践行。</p>
+<p>能够让人无视周围人的眼光，坚信自己的判断只有一种就是笃信。大部分人都停留在想一想的阶段就是没有笃信自己的判断，笃信源于扎实的推理和不断的拷问。</p>
+<p>之所以是必然是因为只要你坚持足够长的时间，并且一直做正确的事情好的结果和贵人迟早会出现。笃信加上耐心才能帮你熬过阶段性的失落，等到必然的好运</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/25/Week5_OptimisticAttitude/" rel="next" title="OptimisticAttitude(第5周Review课题)">
+                <i class="fa fa-chevron-left"></i> OptimisticAttitude(第5周Review课题)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/25/Week5_PassingTheMilestones/" rel="prev" title="PassingTheMilestones(第5周Review课题)">
+                PassingTheMilestones(第5周Review课题) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/25/Week5_ExactProcedure/"
+           data-title="ExactProcedure(第5周Review课题)" data-url="www.coderlychow.com/2016/09/25/Week5_ExactProcedure/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="daailychow" />
+          <p class="site-author-name" itemprop="name">daailychow</p>
+          <p class="site-description motion-element" itemprop="description">在每一个无会可约,没有女生去爱的躁动周末里，我都会在这里research一个课题,寻找创造惊喜的灵感</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LYChow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/chow_ly" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#做事的方法"><span class="nav-number">1.</span> <span class="nav-text">做事的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择的判断标准"><span class="nav-number">1.0.1.</span> <span class="nav-text">选择的判断标准:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标摆正确了才会有结果"><span class="nav-number">1.0.2.</span> <span class="nav-text">目标摆正确了才会有结果:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#榜样最有效-行动最有说服力"><span class="nav-number">1.0.3.</span> <span class="nav-text">榜样最有效,行动最有说服力:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好的思路能够大大减轻做事情的难度"><span class="nav-number">1.0.4.</span> <span class="nav-text">好的思路能够大大减轻做事情的难度:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修正观念改变自然而然"><span class="nav-number">1.0.5.</span> <span class="nav-text">修正观念改变自然而然:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略"><span class="nav-number">1.0.6.</span> <span class="nav-text">策略:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看热闹还是看门道"><span class="nav-number">1.0.7.</span> <span class="nav-text">看热闹还是看门道:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教是最好的学习方法-帮助别人的那一刻已有回报"><span class="nav-number">1.0.8.</span> <span class="nav-text">教是最好的学习方法,帮助别人的那一刻已有回报:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用笃信的原则指导自己的行为"><span class="nav-number">1.0.9.</span> <span class="nav-text">用笃信的原则指导自己的行为:</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">daailychow</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lychow"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3XyhYMqxc2bwFHPrQqGqa5BO-gzGzoHsz", "CmQQXos7nqS2j3zgcIL5kbpC");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
