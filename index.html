@@ -362,8 +362,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/07/Memory-Management-in-Objective-C-Part-one/" itemprop="url">
-                  Memory Management in Objective-C Part one(第7周Research课题)
+                <a class="post-title-link" href="/2016/10/07/Memory-Management-in-Objective-C/" itemprop="url">
+                  Memory Management in Objective-C Part one (第7周Research课题)
                 </a>
               
             
@@ -376,7 +376,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-07T21:34:55+08:00" content="2016-10-07">
+            <time itemprop="dateCreated" datetime="2016-10-07T20:30:40+08:00" content="2016-10-07">
               2016-10-07
             </time>
           </span>
@@ -387,8 +387,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/07/Memory-Management-in-Objective-C-Part-one/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/07/Memory-Management-in-Objective-C-Part-one/" itemprop="commentsCount"></span>
+                <a href="/2016/10/07/Memory-Management-in-Objective-C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/07/Memory-Management-in-Objective-C/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -398,7 +398,7 @@
 
           
           
-             <span id="/2016/10/07/Memory-Management-in-Objective-C-Part-one/" class="leancloud_visitors" data-flag-title="Memory Management in Objective-C Part one(第7周Research课题)">
+             <span id="/2016/10/07/Memory-Management-in-Objective-C/" class="leancloud_visitors" data-flag-title="Memory Management in Objective-C Part one (第7周Research课题)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,11 +421,9 @@
 
       
         
-          <h2 id="自己生成的对象自己持有"><a href="#自己生成的对象自己持有" class="headerlink" title="自己生成的对象自己持有"></a>自己生成的对象自己持有</h2><blockquote>
-<p>使用一下名称开头的方法名意味着生成的对象只有自己持有:alloc、new、copy、mutableCopy，allocMyObject、newThatObject、copyThis、mutableCopyYourObject也意味着生成并持有对象，以下除外allocate、newer、copying、mutableCopyed</p>
-<p>copy方法遵循NSCopying协议并实现copyWithZone:方法生成并持有副本，mutableCopy方法遵循NSMutableCopying协议并实现mutableCopyWithZone:方法生成并持有副本。<br>
+          <h3 id="ARC规则"><a href="#ARC规则" class="headerlink" title="ARC规则"></a>ARC规则</h3><h4 id="1-不能使用retain-release-retainCount-autorelease"><a href="#1-不能使用retain-release-retainCount-autorelease" class="headerlink" title="1.不能使用retain/release/retainCount/autorelease"></a>1.不能使用retain/release/retainCount/autorelease</h4><h5 id="编译器会自动插入上面这些代码"><a href="#编译器会自动插入上面这些代码" class="headerlink" title="编译器会自动插入上面这些代码."></a>编译器会自动插入上面这些代码.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:ARC forbids explicit message send of ‘release&apos;</div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/07/Memory-Management-in-Objective-C-Part-one/#more" rel="contents">
+            <a class="btn" href="/2016/10/07/Memory-Management-in-Objective-C/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
