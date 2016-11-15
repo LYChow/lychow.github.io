@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Pro Multithreading and Memory Management for iOS and OS X Part of Memory Management (第7周Research课题) | Life Is An Exploration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;
+2.不能使用NSAllocateObject/NSDeallocateObjectalloc实际上就是调用NSAllocateObject函数来生成并持有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pro Multithreading and Memory Management for iOS and OS X Part of Memory Management (第7周Research课题)">
+<meta property="og:url" content="www.coderlychow.com/2016/10/07/Week7_ProMultithreadingandMemoryManagementforiOSandOS X PartofMemoryManagement/index.html">
+<meta property="og:site_name" content="Life Is An Exploration">
+<meta property="og:description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;
+2.不能使用NSAllocateObject/NSDeallocateObjectalloc实际上就是调用NSAllocateObject函数来生成并持有">
+<meta property="og:updated_time" content="2016-10-16T01:43:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pro Multithreading and Memory Management for iOS and OS X Part of Memory Management (第7周Research课题)">
+<meta name="twitter:description" content="ARC规则1.不能使用retain/release/retainCount/autorelease编译器会自动插入上面这些代码.1error:ARC forbids explicit message send of ‘release&amp;apos;
+2.不能使用NSAllocateObject/NSDeallocateObjectalloc实际上就是调用NSAllocateObject函数来生成并持有">
+  
+    <link rel="alternate" href="/atom.xml" title="Life Is An Exploration" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Life Is An Exploration</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">只不过是一场游戏</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="www.coderlychow.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="_posts-Week7_ProMultithreadingandMemoryManagementforiOSandOS X PartofMemoryManagement" class="article article-type-_posts" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/07/Week7_ProMultithreadingandMemoryManagementforiOSandOS X PartofMemoryManagement/" class="article-date">
+  <time datetime="2016-10-07T12:30:40.000Z" itemprop="datePublished">2016-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pro Multithreading and Memory Management for iOS and OS X Part of Memory Management (第7周Research课题)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ARC规则"><a href="#ARC规则" class="headerlink" title="ARC规则"></a>ARC规则</h3><h4 id="1-不能使用retain-release-retainCount-autorelease"><a href="#1-不能使用retain-release-retainCount-autorelease" class="headerlink" title="1.不能使用retain/release/retainCount/autorelease"></a>1.不能使用retain/release/retainCount/autorelease</h4><h5 id="编译器会自动插入上面这些代码"><a href="#编译器会自动插入上面这些代码" class="headerlink" title="编译器会自动插入上面这些代码."></a>编译器会自动插入上面这些代码.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:ARC forbids explicit message send of ‘release&apos;</div></pre></td></tr></table></figure>
+<h4 id="2-不能使用NSAllocateObject-NSDeallocateObject"><a href="#2-不能使用NSAllocateObject-NSDeallocateObject" class="headerlink" title="2.不能使用NSAllocateObject/NSDeallocateObject"></a>2.不能使用NSAllocateObject/NSDeallocateObject</h4><p>alloc实际上就是调用NSAllocateObject函数来生成并持有对象.</p>
+<a id="more"></a>
+<h4 id="3-必须遵守内存管理的方法命名规则"><a href="#3-必须遵守内存管理的方法命名规则" class="headerlink" title="3.必须遵守内存管理的方法命名规则"></a>3.必须遵守内存管理的方法命名规则</h4><p>1.以alloc,new,copy,mutableCopy名称开头在返回对象时,必须返回给调用方所应当持有的对象.这在ARC也是适用的.</p>
+<p>2.不过ARC追加了一条命名规则.以init开始的方法规则必须是实例方法必须要返回对象.返回的对象应该为id类型或该方法声明类的对象类型,或者是该类的超类和子类类型.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-(void) initThisObject; //这个方法以init开头却没有返回对象,因此不能使用</div><div class="line"></div><div class="line">-(void) initialize; //命名规则中这是个例外,这样写是可以的</div></pre></td></tr></table></figure>
+<h4 id="4-不要显示调用dealloc"><a href="#4-不要显示调用dealloc" class="headerlink" title="4.不要显示调用dealloc"></a>4.不要显示调用dealloc</h4><p>ARC会自动进行处理,因此不必书写[super dealloc].非写不可编译器会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:ARC forbids explicit message send of &apos;dealloc&apos;.</div></pre></td></tr></table></figure>
+<h4 id="5-不能使用NSZone"><a href="#5-不能使用NSZone" class="headerlink" title="5.不能使用NSZone"></a>5.不能使用NSZone</h4><p>NSZone在运行时(编译器<strong>OBJC2</strong>被设定的环境)中已被忽略.</p>
+<h4 id="6-对象型变量不能作为C语言结构体-struct-union-的成员"><a href="#6-对象型变量不能作为C语言结构体-struct-union-的成员" class="headerlink" title="6.对象型变量不能作为C语言结构体(struct/union)的成员"></a>6.对象型变量不能作为C语言结构体(struct/union)的成员</h4><blockquote>
+<p>C语言的规约上没有方法来管理结构体的生存周期,因为ARC把内存管理的工作分配了编译器,所以编译器必须能够知道所管理对象的生命周期.例如局部变量可以根据变量的作用域管理其生命周期,但对于C语言的结构体来说,这个标准就是不可实现的.</p>
+</blockquote>
+<p>要想把对象类型变量加入到结构体中可使用下面的方法:<br>在变量前添加<strong>unsafe_unretained修饰符,附有</strong>unsafe_unretained修饰符的变量不属于编译器的内存管理对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">struct Data</div><div class="line">&#123;</div><div class="line">NSMutableArray __unsafe_unretained *array;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="7-显示转换’id’-和-‘void-’"><a href="#7-显示转换’id’-和-‘void-’" class="headerlink" title="7.显示转换’id’ 和 ‘void *’"></a>7.显示转换’id’ 和 ‘void *’</h4><p>id型或对象型变量赋值给void *需要进行特定的转换.如果只想单纯的赋值,则可以使用”__bridge转换”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">id obj = [[NSObject alloc]init];</div><div class="line"></div><div class="line">void *p =(__bridge void *)obj;</div><div class="line"></div><div class="line">id o = (__bridge id) p;</div></pre></td></tr></table></figure>
+<p><strong>bridge转换中还有另外两种转换,分别是”</strong>bridge_retained转换”和”__bridge_transfer转换”</p>
+<blockquote>
+<p>在MRC中__bridge_retained转换变成了retain</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">MRC</div><div class="line"></div><div class="line">id obj = [[NSObject alloc]init];</div><div class="line"></div><div class="line">void *p = (__bridge_retained void *)obj;</div><div class="line"></div><div class="line">等同于下面代码</div><div class="line"></div><div class="line">id obj = [[NSObject alloc]init];</div><div class="line"></div><div class="line">void *p =obj;</div><div class="line"></div><div class="line">[(id)p retain];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>__bridge_transfer被转换的变量所持有的对象,在该变量被赋值给转换目标变量后随之释放.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">MRC</div><div class="line"></div><div class="line">id obj = (__bridge_transfer id)p;</div><div class="line"></div><div class="line">等同于下面代码</div><div class="line"></div><div class="line">id obj = (id)p;</div><div class="line"></div><div class="line">[obj retain];</div><div class="line"></div><div class="line">[(id)p release];</div></pre></td></tr></table></figure>
+<h4 id="8-使用-autoreleasepool-块替代NSAutoreleasePool"><a href="#8-使用-autoreleasepool-块替代NSAutoreleasePool" class="headerlink" title="8.使用@autoreleasepool 块替代NSAutoreleasePool"></a>8.使用@autoreleasepool 块替代NSAutoreleasePool</h4><p>在ARC中不能使用NSAutoreleasePool类,非用不可编译器会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error:&apos;NSAutoreleasePool&apos; is unavailable:not available in automatic reference counting mode.</div></pre></td></tr></table></figure>
+<h3 id="自己生成的对象自己持有"><a href="#自己生成的对象自己持有" class="headerlink" title="自己生成的对象自己持有"></a>自己生成的对象自己持有</h3><p>使用一下名称开头的方法名意味着生成的对象只有自己持有:alloc、new、copy、mutableCopy</p>
+<blockquote>
+<p>allocMyObject、newThatObject、copyThis、mutableCopyYourObject也意味着生成并持有对象.</p>
+<p>allocate、newer、copying、mutableCopyed(这些除外)</p>
+</blockquote>
+<p>copy方法遵循NSCopying协议并实现copyWithZone:方法生成并持有副本，mutableCopy方法遵循NSMutableCopying协议并实现mutableCopyWithZone:方法生成并持有副本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">id obj =[NSMutableArray array]; //取得非自己生成并持有的对象</div><div class="line"></div><div class="line">id obj =[[NSObject alloc]init]; //取得自己生成并持有的对象</div></pre></td></tr></table></figure>
+<h3 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h3><p>ARC 背后的原理是依赖编译器的静态分析能力，通过在编译时找出合理的插入引用计数管理代码. 加上 -fno-objc-arc 这个编译参数可以启用手工管理引用计数的模式。</p>
+<blockquote>
+<p>引用计数—&gt;内存块地址—&gt;可追溯到内存块</p>
+</blockquote>
+<p> 引用计数表各记录中存有内存块地址，可以从各个记录中追溯到各对象的内存块，即使出现故障导致对象占用的内存块损坏，但只有引用计数没有被损坏，就可以确认各个内存块的位置.在利用工具检测内存泄漏时，引用计数的各记录也有助于检测各对象的持有者是否存在</p>
+<h4 id="引用计数是为了解决多个对象强引用M对象的情况？"><a href="#引用计数是为了解决多个对象强引用M对象的情况？" class="headerlink" title="引用计数是为了解决多个对象强引用M对象的情况？"></a>引用计数是为了解决多个对象强引用M对象的情况？</h4><p>多个对象强引用M对象利用引用计数方案很好的解决了这个问题，在参数 M 的传递过程中，哪些对象需要长时间使用这个对象，就把它的引用计数加 1，使用完了之后再把引用计数减 1。所有对象都遵守这个规则的话，对象的生命期管理就可以完全交给引用计数了。我们也可以很方便地享受到共享对象带来的好处。</p>
+<h4 id="对象回收之后retainCount为什么没有变为0？"><a href="#对象回收之后retainCount为什么没有变为0？" class="headerlink" title="对象回收之后retainCount为什么没有变为0？"></a>对象回收之后retainCount为什么没有变为0？</h4><p>那为什么在这个对象被回收之后，这个不确定的值是 1 而不是 0 呢？这是因为当最后一次执行 release 时，系统知道马上就要回收内存了，就没有必要再将 retainCount 减 1 了，因为不管减不减 1，该对象都肯定会被回收，而对象被回收后，它的所有的内存区域，包括 retainCount 值也变得没有意义。不将这个值从 1 变成 0，可以减少一次内存的写操作，加速对象的回收。</p>
+<h3 id="Core-Foundation-与-Foundation转换"><a href="#Core-Foundation-与-Foundation转换" class="headerlink" title="Core Foundation 与 Foundation转换"></a>Core Foundation 与 Foundation转换</h3><p>在 ARC 下，我们有时需要将一个 Core Foundation 对象转换成一个 Objective-C 对象，这个时候我们需要告诉编译器，转换过程中的引用计数需要做如何的调整。这就引入了bridge相关的关键字，以下是这些关键字的说明：</p>
+<ul>
+<li>__bridge: 只做类型转换，不修改相关对象的引用计数，原来的 Core Foundation 对象在不用时，需要调用 CFRelease 方法</li>
+<li>__bridge_retained：类型转换后，将相关对象的引用计数加 1，原来的 Core Foundation 对象在不用时，需要调用 CFRelease 方法</li>
+<li>__bridge_transfer：类型转换后，将该对象的引用计数交给 ARC 管理，Core Foundation 对象在不用时，不再需要调用 CFRelease 方法</li>
+</ul>
+<h4 id="Foundation—-gt-CoreFoundation对象"><a href="#Foundation—-gt-CoreFoundation对象" class="headerlink" title="Foundation—-&gt;CoreFoundation对象"></a>Foundation—-&gt;CoreFoundation对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">CFMutableArrayRef cfobject =NULL;</div><div class="line">&#123;</div><div class="line">id obj =[[NSMutableArray alloc] init];</div><div class="line">cfobject = CFBridgingRetain(obj);</div><div class="line">CFShow(cfobject);</div><div class="line">&#125;</div><div class="line">CFRelease(cfobject);</div><div class="line"></div><div class="line">也可以使用__bridge_retained转换来替代CFBridgingRetain</div><div class="line"></div><div class="line">CFMutableArrayRef cfobject =(__bridge_retained CFMutableArrayRef)obj;</div><div class="line"></div><div class="line">__bridge转换不改变对象的持有情况</div><div class="line"></div><div class="line">CFMutableArrayRef cfobject =NULL;</div><div class="line">&#123;</div><div class="line">id obj =[[NSMutableArray alloc] init];      //引用计数为1</div><div class="line">cfobject = (__bridge CFMutableArrayRef)obj; //引用计数仍然为1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="CoreFoundation—-gt-Foundation对象"><a href="#CoreFoundation—-gt-Foundation对象" class="headerlink" title="CoreFoundation—-&gt;Foundation对象"></a>CoreFoundation—-&gt;Foundation对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">CFMutableArrayRef cfobject = CFArrayCreateMutable(kCFAllocatorDefault ,0,NULL); //CoreFoundation框架的API生成并持有对象,引用计数为1</div><div class="line">id obj = CFBridgingRelease(cfobject);  //通过CFBridgingRelease赋值,变量obj持有对象强引用的同时,对象通过CFRelease释放</div><div class="line">&#125;</div><div class="line">CFMutableArrayRef cfobject = CFArrayCreateMutable(kCFAllocatorDefault ,0,NULL); //CoreFoundation框架的API生成并持有对象,引用计数为1</div><div class="line"></div><div class="line">id obj = (bridge id)cfobject; //因为赋值给附有strong修饰符的变量中,所有发生了强引用,引用计数为2,这种情况在超出作用域的情况可能会发生内存泄漏</div></pre></td></tr></table></figure>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
+<thead>
+<tr>
+<th>属性声明属性</th>
+<th>所有权修饰符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assign</td>
+<td>__unsafe_unretained修饰符</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>__strong修饰符(但赋值的是被复制的对象)</td>
+</tr>
+<tr>
+<td>retain</td>
+<td>strong修饰符</td>
+</tr>
+<tr>
+<td>strong</td>
+<td>strong修饰符</td>
+</tr>
+<tr>
+<td>__unsafe_unretained</td>
+<td>__unsafe_unretained修饰符</td>
+</tr>
+<tr>
+<td>weak</td>
+<td>__weak修饰符</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic,weak) id obj; //error:existing ivar &apos;obj&apos; for __weak property &apos;obj&apos; must be __weak</div><div class="line">两种修改办法</div><div class="line">1.@property(nonatomic,weak) id __weak obj;</div><div class="line">2.@property(nonatomic,strong) id obj;</div></pre></td></tr></table></figure>
+<h3 id="Calloc和Malloc的使用"><a href="#Calloc和Malloc的使用" class="headerlink" title="Calloc和Malloc的使用"></a>Calloc和Malloc的使用</h3><p>虽然保证了附有<strong>strong修饰符的id型变量被初始化为nil,但并不能保证附有</strong>strong修饰符的id指针型变量被初始化为nil.</p>
+<blockquote>
+<p>id __strong *array =nil;</p>
+<p>声明动态数组用指针<br>NSObject <em>__strong </em>array = nil;</p>
+</blockquote>
+<p>使用calloc函数确保分配的附有__strong修饰符变量的容量占有内存块.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array = (id __strong *)calloc(entries,sizeof(id));//该源代码分配了entries个所需的内存块,由于使用附有__strong修饰符的变量前必须先将其初始化为nil,所以使用分配区域初始化为0的calloc函数来分配内存.</div></pre></td></tr></table></figure>
+<p>如果使用malloc函数分配内存后可用memset等函数将内存填充为0.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">array = (id __strong *)malloc(entries * sizeof(id));</div><div class="line"></div><div class="line">for(NSUInterger i=0;i&lt;entries;i++)</div><div class="line"></div><div class="line">array[i] = nil; //将nil代入到malloc函数所分配的数组各元素中来初始化是很危险的,这是因为由malloc函数分配的内存区域没有初始化为0,因此nil会被赋值给附有__strong修饰符的并被赋值了随机地址的变量中,从而释放了一个不存在的对象.</div></pre></td></tr></table></figure>
+<p>如果只是简单的free(array)函数废弃了数组内存块的情况下,数组各元素所赋值的对象不能再次释放,从而引起内存泄漏.这是因为在静态数组中,编译器能够根据变量的作用域自动插入释放赋值对象的代码,而在动态数组中编译器不能确定数组的生命周期,所以无从处理.</p>
+<p>用free函数废弃内存块可以用以下方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for(NSUInteger i= 0;i&lt;entries;i++)</div><div class="line">array[i] = nil;</div><div class="line">free(array);</div></pre></td></tr></table></figure>
+<h3 id="release和autorelease"><a href="#release和autorelease" class="headerlink" title="release和autorelease"></a>release和autorelease</h3><p>release立即释放,autorelease不立即释放,注册到autoreleasepool中，pool结束时自动调用release.</p>
+<p>如果是多层嵌套的NSAutoreleasePool,理所当然使用最内侧的对象</p>
+<h4 id="autorelease底层实现"><a href="#autorelease底层实现" class="headerlink" title="autorelease底层实现"></a>autorelease底层实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">-(id) autorelease</div><div class="line">&#123;</div><div class="line">[NSAutoreleasePool addObject:self];</div><div class="line">&#125;</div><div class="line"></div><div class="line">+(void) addObject:(id) anObj</div><div class="line">&#123;</div><div class="line">NSAutoreleasePool *pool =取得正在使用的NSAutoreleasePool对象;</div><div class="line"></div><div class="line">if(pool !=nil)</div><div class="line">&#123;</div><div class="line">[pool addObject:anObj];</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">NSLog(@&quot;NSAutoreleasePool不存在&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">-(void) addObject:(id) anObj</div><div class="line">&#123;</div><div class="line">[array addObject:anObj];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="以下是drain实例方法废弃正在使用的NSAutoreleasePool对象的过程"><a href="#以下是drain实例方法废弃正在使用的NSAutoreleasePool对象的过程" class="headerlink" title="以下是drain实例方法废弃正在使用的NSAutoreleasePool对象的过程"></a>以下是drain实例方法废弃正在使用的NSAutoreleasePool对象的过程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[pool drain];</div><div class="line">-(void) drain</div><div class="line">&#123;</div><div class="line">[self dealloc];</div><div class="line">&#125;</div><div class="line">-(void)dealloc</div><div class="line">&#123;</div><div class="line">[self emptyPool];</div><div class="line">[array release];</div><div class="line">&#125;</div><div class="line">-(void)emptyPool</div><div class="line">&#123;</div><div class="line">for(id obj in array)</div><div class="line">&#123;</div><div class="line">[obj  release];</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="alloc的底层实现"><a href="#alloc的底层实现" class="headerlink" title="alloc的底层实现"></a>alloc的底层实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">id obj = [NSObject alloc];</div><div class="line">+(id)alloc</div><div class="line">&#123;</div><div class="line">return [self allocWithZone:NSDefaultMallocZone()];</div><div class="line">&#125;</div><div class="line">+(id)allocWithZone:(NSZone *)zone</div><div class="line">&#123;</div><div class="line">return NSAllocateObject(self,0,zone);</div><div class="line">&#125;</div><div class="line">//NSAllocateObject函数</div><div class="line">struct obj_layout</div><div class="line">&#123;</div><div class="line">NSUInteger retained; //用来保存引用计数，并将其写入对象内存的头部</div><div class="line">&#125;</div><div class="line">NSAllocateObject（Class aclass,NSUInteger extraBytes,NSZone *zone）</div><div class="line">&#123;</div><div class="line">int size = 计算容纳对象所需内存大小;</div><div class="line">int new = NSZoneMalloc(zone,size);//分配存放对象所需的内存空间</div><div class="line">memset(new,0,size); // 将内存空间置为0</div><div class="line">new = （id）&amp; ((struct obj_layout *)new)[1];</div><div class="line">&#125;</div><div class="line">alloc追踪程序执行过程，alloc类方法首先会调用+allocWithZone:方法，然后调用class_createInstance函数，最后调用calloc来分配内存块.</div></pre></td></tr></table></figure>
+<h3 id="所有权修饰符"><a href="#所有权修饰符" class="headerlink" title="所有权修饰符"></a>所有权修饰符</h3><h4 id="strong-修饰符是id类型和对象类型默认的所有权修饰符"><a href="#strong-修饰符是id类型和对象类型默认的所有权修饰符" class="headerlink" title="__strong 修饰符是id类型和对象类型默认的所有权修饰符."></a>__strong 修饰符是id类型和对象类型默认的所有权修饰符.</h4><p>id类型用于隐藏对象类型相当于C语言的void *.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">id obj =[[NSObject alloc]init];  </div><div class="line">//等同于下面</div><div class="line">id __strong obj =[[NSObject alloc]init];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">id __strong obj0 =[[NSObject alloc]init];  /对象A/ //obj0持有对象A的强引用</div><div class="line"></div><div class="line">id __strong obj1 =[[NSObject alloc]init];  /对象B/ //obj1持有对象A的强引用</div><div class="line"></div><div class="line">id __strong obj2 =nil; //obj2不持有任何对象</div><div class="line"></div><div class="line">obj0=obj1; //obj0持有obj1所赋值的对象B的强引用，obj0被赋值持有对象A的强引用失效，对象A的所有者不存在，因此废弃A,此时持有对象B的变量为obj0、obj1</div></pre></td></tr></table></figure>
+<h4 id="ARC有效不能使用release方法-但我们的确知道编译器自动插入了release"><a href="#ARC有效不能使用release方法-但我们的确知道编译器自动插入了release" class="headerlink" title="ARC有效不能使用release方法,但我们的确知道编译器自动插入了release"></a>ARC有效不能使用release方法,但我们的确知道编译器自动插入了release</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">id __strong obj =[NSMutableArray array];</div><div class="line"></div><div class="line">/*编译器模拟代码*/</div><div class="line"></div><div class="line">id obj = objc_msgSend(NSMutableArray,@selector(array));</div><div class="line"></div><div class="line">objc_retainAutoreleasedReturnValue(obj); //用于持有对象的函数,但它持有的对象应为返回注册在autoreleasepool中对象的方法</div><div class="line"></div><div class="line">objc_release(obj);</div><div class="line"></div><div class="line">objc_autoreleaseReturnValue函数会检查使用该函数的方法或函数调用方的执行命令列表,如果紧接着又调用objc_retainAutoreleasedReturnValue()函数,就不将返回的对象注册到autoreleasepool中,而是直接传递到方法的调用方</div><div class="line"></div><div class="line">一言以蔽之:</div><div class="line">objc_autoreleaseReturnValue持有的对象原本硬注册到autoreleasepool中,但通过objc_autoreleaseReturnValue和objc_retainAutoreleasedReturnValue,直接传递给了调用方</div></pre></td></tr></table></figure>
+<h4 id="weak修饰符"><a href="#weak修饰符" class="headerlink" title="__weak修饰符"></a>__weak修饰符</h4><blockquote>
+<p>看样子strong修饰符编译器就能完美进行内存管理，但遗憾的是仅仅通过strong修饰符还不能解决循环引用问题。</p>
+<p>循环引用容易发生内存泄漏。所谓内存泄漏就是应当废弃的对象在超出其生存周期后继续存在。在持有对象的弱引用时，若该对象被废弃，则此弱引用将自动失效且处于nil.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">id __weak obj1 =obj;</div><div class="line"></div><div class="line">/编译器和模拟代码/</div><div class="line"></div><div class="line">id obj1;</div><div class="line"></div><div class="line">objc_initWeak(&amp;obj1,obj);  //objc_initWeak函数会将赋值的对象作为参数调用objc_storeWeak</div><div class="line"></div><div class="line">objc_destroyWeak(&amp;obj1);  //objc_destroyWeak函数将0作为参数调用objc_storeWeak</div><div class="line"></div><div class="line"></div><div class="line">1.objc_storeWeak函数会将第二参数的赋值对象的地址作为键值,将第一参数的附有__weak修饰符的变量的地址注册到weak表中</div><div class="line">2.如果第二参数为0,则把变量的地址从weak表中删除.</div><div class="line">3.由于一个对象可同时赋值给多个附有__weak修饰符的变量中,所以一个键值可以注册多个变量地址.</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>附有</strong>weak修饰符的变量所引用的对象废弃时,将nil赋值给该变量怎样实现的?</p>
+</blockquote>
+<p>(获取键值对应记录)从weak表中获取废弃对象的地址为键值的记录.—-&gt;(将记录对应的所有变量赋为nil)将包含在记录中的所有附有__weak修饰符变量的地址,赋值为nil.—-&gt;(删除记录)从weak表中删除该记录.—-&gt;(引用计数表中删除记录)从引用计数表中删除废弃对象的地址为键值的记录.</p>
+<h4 id="unsafe-unretained修饰符"><a href="#unsafe-unretained修饰符" class="headerlink" title="__unsafe_unretained修饰符"></a>__unsafe_unretained修饰符</h4><p>附有__unsafe_unretained修饰符的变量不属于编译器内存管理的对象，如果没有确保其确实存在，那么应用程序就会崩溃</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">id __unsafe_unretained obj1 =nil;</div><div class="line">&#123;</div><div class="line">id __strong obj0 =[[NSObject alloc]init];</div><div class="line">obj1 =obj0; //虽然obj0变量赋值给obj1,但obj1变量既不持有对象的强引用也不持有弱引用</div><div class="line">&#125;</div><div class="line"></div><div class="line">//obj0超出作用域强引用失效,所以自动释放自己持有的对象</div><div class="line">NSLog(@&quot;%@&quot;,obj1); //obj1变量表示的对象已经被废弃,错误访问</div></pre></td></tr></table></figure>
+<h4 id="autoreleasing修饰符"><a href="#autoreleasing修饰符" class="headerlink" title="__autoreleasing修饰符"></a>__autoreleasing修饰符</h4><blockquote>
+<p>指定@autoreleasepool块来替代 “autoreleasepool类对象的生成、持有以及废弃”</p>
+</blockquote>
+<p>id的指针或对象的指针在没有显式指定时会被附加上autoreleasing修饰符。虽然可以显式指定autoreleasing修饰符，但在显式指定__autoreleasing修饰符必须注意对象的变量要为自动变量(包括局部变量、函数以及方法参数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NSAutoreleasePool *pool =[[NSAutoreleasePool alloc]init];</div><div class="line">[obj autorelease];</div><div class="line">[pool drain];</div><div class="line">//等价于下面</div><div class="line">@autoreleasepool&#123;</div><div class="line">id __autoreleasing 0bj2;</div><div class="line">obj2 = obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>要通过将对象赋值给附加了autoreleasing修饰符的变量来替代autorelease方法，ARC有效时要用@autoreleasepool替代NSAutoreleasePool类，对象赋值给附有autoreleasing修饰符的变量等价于在ARC无效时调用对象的autorelease方法，即对象被注册到autoreleasepool中.</p>
+<blockquote>
+<p>编译器会检查方法名是否以alloc/new/copy/mutableCopy开始，如果不是则自动将返回值的对象注册到autoreleasepool中.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">id __strong obj = [NSMutableArray array];  //由编译器判断方法名之后会被自动注册到autoreleasepool.</div><div class="line"></div><div class="line">//由于return使得对象变量超出其作用域,所以该强引用对应自己持有的对象会被自动释放,但该对象作为函数的返回值,编译器会自动将其注册到autoreleasepool</div><div class="line"></div><div class="line">+(id) array</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">id obj =[[NSMutableArray alloc] init];</div><div class="line"></div><div class="line">return obj;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="为什么在访问附有weak修饰符的变量时必须访问注册到autoreleasepool的对象呢？"><a href="#为什么在访问附有weak修饰符的变量时必须访问注册到autoreleasepool的对象呢？" class="headerlink" title="为什么在访问附有weak修饰符的变量时必须访问注册到autoreleasepool的对象呢？"></a>为什么在访问附有weak修饰符的变量时必须访问注册到autoreleasepool的对象呢？</h4><blockquote>
+<p>这是因为weak修饰符支持有对象的弱引用，访问该对象的过程中该对象可能被废弃，如果把访问的对象 注册到autoreleasepool中,那么在@autoreleasepool块结束前都能确保对象存在.</p>
+</blockquote>
+<p>__autoreleasing修饰符的变量等同于ARC无效时调用对象的autorelease方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">@autoreleasepool&#123;</div><div class="line"></div><div class="line">id __autoreleasing obj =[[NSObject alloc]init];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">/编译器的模拟代码/</div><div class="line"></div><div class="line">id pool = objc_autoreleasePoolPush();</div><div class="line"></div><div class="line">id obj = objc_msgSend(NSObject,@selector(alloc));</div><div class="line"></div><div class="line">objc_msgSend(NSObject,@selector(init));</div><div class="line"></div><div class="line">objc_autorelease(obj);</div><div class="line"></div><div class="line">objc_autorelease</div></pre></td></tr></table></figure>
+<p>参考资料:<br><a href="https://item.jd.com/11258970.html" target="_blank" rel="external">Objective-C高级编程 iOS与OS X多线程和内存管理</a><br><a href="http://mp.weixin.qq.com/s?__biz=MjM5NTIyNTUyMQ==&amp;mid=2709545063&amp;idx=1&amp;sn=894f73edb1246695c13a8f463c2e5bec&amp;mpshare=1&amp;scene=1&amp;srcid=1007toUNc0RpGZkGvvBF9AkI#rd" target="_blank" rel="external">理解 iOS 的内存管理</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="www.coderlychow.com/2016/10/07/Week7_ProMultithreadingandMemoryManagementforiOSandOS X PartofMemoryManagement/" data-id="civjmeo57000mo7llyf4lzkfj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/07/Week7_A-Brief-History-of-Humankind/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          A Brief History of Humankind(第7周Summary课题)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/30/Week6_some-problems-confuse-me-in-working/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">some problems was persecuted me for long time at work(第6周Summary课题)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/13/Week11_Gamification/">Gamification (第11周Research课题)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/30/Week10_reading-skills-from-lixiaolai/">reading skills from lixiaolai(第10周Summary的课题)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/30/Week10_Cpp-Grammar/">Cpp Grammar(第10周Summary的课题)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/23/Week9_tips-about-house-from-lujun/">tips about house from lujun(第9周Research课题)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/16/Week8_A-Brief-History-of-Tomorrow/">A Brief History of Tomorrow(第8周Summary课题)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 daailychow<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
