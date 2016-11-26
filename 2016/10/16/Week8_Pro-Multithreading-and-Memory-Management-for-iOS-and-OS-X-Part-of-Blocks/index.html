@@ -1,11 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <title>Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题) | Life Is An Exploration</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BlockSyntaxAs a local variable:1returnType (^blockName)(parameterTypes) = ^returnType(parameters)&amp;#123;...&amp;#125;;
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google7dbb8a5329ef9b78.html" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="BlockSyntaxAs a local variable:1returnType (^blockName)(parameterTypes) = ^returnType(parameters)&amp;#123;...&amp;#125;;
 AS a property:1@property(nonatomic,copy,nullability) returnType(^blockName)(parameterT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题)">
@@ -18,79 +99,242 @@ AS a property:1@property(nonatomic,copy,nullability) returnType(^blockName)(para
 <meta name="twitter:title" content="Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题)">
 <meta name="twitter:description" content="BlockSyntaxAs a local variable:1returnType (^blockName)(parameterTypes) = ^returnType(parameters)&amp;#123;...&amp;#125;;
 AS a property:1@property(nonatomic,copy,nullability) returnType(^blockName)(parameterT">
-  
-    <link rel="alternate" href="/atom.xml" title="Life Is An Exploration" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6332761207551821000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="www.coderlychow.com/2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/"/>
+
+  <title> Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题) | Life Is An Exploration </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Life Is An Exploration</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">只不过是一场游戏</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="www.coderlychow.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="_posts-Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks" class="article article-type-_posts" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/" class="article-date">
-  <time datetime="2016-10-16T01:39:39.000Z" itemprop="datePublished">2016-10-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题)
-    </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '84595258', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Life Is An Exploration</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">只不过是一场游戏</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'WFjz5j_iq3KdG8zjmBXr','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-16T09:39:39+08:00" content="2016-10-16">
+              2016-10-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/" class="leancloud_visitors" data-flag-title="Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <h3 id="BlockSyntax"><a href="#BlockSyntax" class="headerlink" title="BlockSyntax"></a>BlockSyntax</h3><h5 id="As-a-local-variable"><a href="#As-a-local-variable" class="headerlink" title="As a local variable:"></a>As a <strong>local variable</strong>:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters)&#123;...&#125;;</div></pre></td></tr></table></figure>
 <h5 id="AS-a-property"><a href="#AS-a-property" class="headerlink" title="AS a property:"></a>AS a property:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic,copy,nullability) returnType(^blockName)(parameterTypes);</div></pre></td></tr></table></figure>
@@ -244,120 +488,426 @@ AS a property:1@property(nonatomic,copy,nullability) returnType(^blockName)(para
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="www.coderlychow.com/2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/" data-id="civqn2sfk000pzqllqw8iydqt" class="article-share-link">Share</a>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/10/Week3-English-Review-Methods/" rel="next" title="English Review Methods(第3周Research课题)">
+                <i class="fa fa-chevron-left"></i> English Review Methods(第3周Research课题)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/16/Week8_brief-notes-about-house-form-renzhiqiang/" rel="prev" title="brief notes about house form renzhiqiang(第8周Research课题-初版)">
+                brief notes about house form renzhiqiang(第8周Research课题-初版) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
-  
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<nav id="article-nav">
-  
-    <a href="/2016/10/16/Week8_brief-notes-about-house-form-renzhiqiang/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+      <div class="ds-thread" data-thread-key="2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/"
+           data-title="Pro Multithreading and Memory Management for iOS and OS X Part of Blocks(第8周Research课题)" data-url="www.coderlychow.com/2016/10/16/Week8_Pro-Multithreading-and-Memory-Management-for-iOS-and-OS-X-Part-of-Blocks/">
+      </div>
+    
+  </div>
+
+
+        </div>
         
-          brief notes about house form renzhiqiang(第8周Research课题-初版)
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="daailychow" />
+          <p class="site-author-name" itemprop="name">daailychow</p>
+          <p class="site-description motion-element" itemprop="description">在每一个无会可约,没有女生去爱的躁动周末里，我都会在这里research一个课题,寻找创造惊喜的灵感</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LYChow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/chow_ly" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#BlockSyntax"><span class="nav-number">1.</span> <span class="nav-text">BlockSyntax</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#As-a-local-variable"><span class="nav-number">1.0.1.</span> <span class="nav-text">As a local variable:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AS-a-property"><span class="nav-number">1.0.2.</span> <span class="nav-text">AS a property:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AS-a-method-parameter"><span class="nav-number">1.0.3.</span> <span class="nav-text">AS a method parameter:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#As-a-argument-to-a-method-call"><span class="nav-number">1.0.4.</span> <span class="nav-text">As a argument to a method call:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AS-a-typedef"><span class="nav-number">1.0.5.</span> <span class="nav-text">AS a typedef:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#省略返回值类型"><span class="nav-number">1.1.</span> <span class="nav-text">省略返回值类型:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#省略参数列表"><span class="nav-number">1.2.</span> <span class="nav-text">省略参数列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef定义Block"><span class="nav-number">1.3.</span> <span class="nav-text">typedef定义Block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#block变量和C语言的其他变量一样使用"><span class="nav-number">1.4.</span> <span class="nav-text">block变量和C语言的其他变量一样使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block定义"><span class="nav-number">2.</span> <span class="nav-text">Block定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么block捕获的局部变量不能更改"><span class="nav-number">3.</span> <span class="nav-text">为什么block捕获的局部变量不能更改?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在block中编译器在编译过程中检出给被截获自动变量赋值操作时-便产生编译错误-这样一来block中就不能保存值了极为不便-解决这个问题有两种方法允许Block修改值"><span class="nav-number">3.1.</span> <span class="nav-text">在block中编译器在编译过程中检出给被截获自动变量赋值操作时,便产生编译错误.这样一来block中就不能保存值了极为不便.解决这个问题有两种方法允许Block修改值:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Block变量是否可修改注意事项"><span class="nav-number">3.2.</span> <span class="nav-text">Block变量是否可修改注意事项:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#block从栈到堆"><span class="nav-number">4.</span> <span class="nav-text">block从栈到堆?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈变量是如何自动生成将Block代码复制到堆上的"><span class="nav-number">4.1.</span> <span class="nav-text">栈变量是如何自动生成将Block代码复制到堆上的?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#该源代码的blk-即Block在执行时发生异常应用程序强制结束-这是由于在getBlockArray函数执行结束时-栈上的block被废弃的缘故"><span class="nav-number">4.2.</span> <span class="nav-text">该源代码的blk(),即Block在执行时发生异常应用程序强制结束.这是由于在getBlockArray函数执行结束时,栈上的block被废弃的缘故.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#block的作用"><span class="nav-number">5.</span> <span class="nav-text">__block的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#block所起到的作用就是只要观察到该变量被-block-所持有，就将“外部变量”在栈中的内存地址放到了堆中。进而在block内部也可以修改外部变量的值。理解到这是因为堆栈地址的变更，而非所谓的“写操作生效”"><span class="nav-number">5.0.1.</span> <span class="nav-text">__block所起到的作用就是只要观察到该变量被 block 所持有，就将“外部变量”在栈中的内存地址放到了堆中。进而在block内部也可以修改外部变量的值。理解到这是因为堆栈地址的变更，而非所谓的“写操作生效”.</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何证明block内部打印的是堆地址"><span class="nav-number">5.1.</span> <span class="nav-text">如何证明block内部打印的是堆地址?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clang"><span class="nav-number">6.</span> <span class="nav-text">clang</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#struct-main-block-impl-0-cself-参数cself是-main-block-impl-0结构体指针"><span class="nav-number">6.1.</span> <span class="nav-text">struct main_block_impl_0 *cself   参数cself是 main_block_impl_0结构体指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化-main-block-impl0结构体成员的源代码"><span class="nav-number">6.2.</span> <span class="nav-text">初始化__main_block_impl0结构体成员的源代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个block使用同一个block变量"><span class="nav-number">7.</span> <span class="nav-text">多个block使用同一个block变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类-设置对象的存储区"><span class="nav-number">8.</span> <span class="nav-text">类:设置对象的存储区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block的副本"><span class="nav-number">9.</span> <span class="nav-text">Block的副本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译器不能管理结构体内存-运行时库可以管理其内存"><span class="nav-number">10.</span> <span class="nav-text">编译器不能管理结构体内存,运行时库可以管理其内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#copy函数和dispose函数的调用时机"><span class="nav-number">10.1.</span> <span class="nav-text">copy函数和dispose函数的调用时机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dispose函数的调用时机-堆上的Block被废弃时"><span class="nav-number">10.2.</span> <span class="nav-text">dispose函数的调用时机:堆上的Block被废弃时</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block循环引用"><span class="nav-number">11.</span> <span class="nav-text">Block循环引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量引起的循环引用"><span class="nav-number">11.1.</span> <span class="nav-text">成员变量引起的循环引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-block变量避免循环引用"><span class="nav-number">11.2.</span> <span class="nav-text">使用__block变量避免循环引用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如果不调用execBlock就会引起循环引用"><span class="nav-number">11.2.1.</span> <span class="nav-text">如果不调用execBlock就会引起循环引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时我们调用execBlock方法-会发生什么样的事情呢"><span class="nav-number">11.2.2.</span> <span class="nav-text">此时我们调用execBlock方法,会发生什么样的事情呢?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#copy-release"><span class="nav-number">12.</span> <span class="nav-text">copy/release</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#虽然对赋值给blk-on-stack的栈上的Block调用了retain方法实例方法-但实际上对此源代码不起任何作用-因此推荐使用copy方法来持有Block"><span class="nav-number">12.1.</span> <span class="nav-text">虽然对赋值给blk_on_stack的栈上的Block调用了retain方法实例方法,但实际上对此源代码不起任何作用.因此推荐使用copy方法来持有Block.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">13.</span> <span class="nav-text">参考资料:</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-    <a href="/2016/10/10/Week3-English-Review-Methods/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">English Review Methods(第3周Research课题)</div>
-    </a>
-  
-</nav>
+    </main>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-</article>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">daailychow</span>
+</div>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-  
-    
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.pisces
+  </a>
+</div>
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
-    </div>
-  </div>
+        
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/11/20/Week12_the-road-to-breakeout-for-living-have-to-selling-time/">the road to breakeout for living have to selling time(第12周Summary课题)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/20/Week12_The-Start-up-of-You-Executive-Summary/">The Start-up of You:Executive Summary(第12周Summary课题)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/13/Week11_Gamification/">Gamification (第11周Research课题)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/30/Week10_reading-skills-from-lixiaolai/">reading skills from lixiaolai(第10周Summary的课题)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/30/Week10_Cpp-Grammar/">Cpp Grammar(第10周Summary的课题)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 daailychow<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
     
+  
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lychow"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3XyhYMqxc2bwFHPrQqGqa5BO-gzGzoHsz", "CmQQXos7nqS2j3zgcIL5kbpC");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
 </body>
 </html>
