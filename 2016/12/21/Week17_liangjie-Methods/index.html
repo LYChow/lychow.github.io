@@ -1,0 +1,782 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google7dbb8a5329ef9b78.html" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="以下文字是梁杰同学过往遇到的各种问题，他的思考问题的过程，和他做出决定的结果!对我以后学习做事有很大的启发,决定作为一个课题好好感受他思考问题的路径,再次感谢他在这里你可以发现这个有趣的人
+学习方法:1.从知道到做到需要大量的重复,如果当前不能高频的使用大量重复学习就是无效的2.一鼓作气,战线拖得越长坚持不下去的可能性越大2.1、生活中有太多不可控因素,战线拉的太长一定会被干扰,理想状况是不存在的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="liangjie Methods(第17周Summary课题)">
+<meta property="og:url" content="www.coderlychow.com/2016/12/21/Week17_liangjie-Methods/index.html">
+<meta property="og:site_name" content="For Life in Permanent Beta">
+<meta property="og:description" content="以下文字是梁杰同学过往遇到的各种问题，他的思考问题的过程，和他做出决定的结果!对我以后学习做事有很大的启发,决定作为一个课题好好感受他思考问题的路径,再次感谢他在这里你可以发现这个有趣的人
+学习方法:1.从知道到做到需要大量的重复,如果当前不能高频的使用大量重复学习就是无效的2.一鼓作气,战线拖得越长坚持不下去的可能性越大2.1、生活中有太多不可控因素,战线拉的太长一定会被干扰,理想状况是不存在的">
+<meta property="og:updated_time" content="2016-12-21T14:30:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="liangjie Methods(第17周Summary课题)">
+<meta name="twitter:description" content="以下文字是梁杰同学过往遇到的各种问题，他的思考问题的过程，和他做出决定的结果!对我以后学习做事有很大的启发,决定作为一个课题好好感受他思考问题的路径,再次感谢他在这里你可以发现这个有趣的人
+学习方法:1.从知道到做到需要大量的重复,如果当前不能高频的使用大量重复学习就是无效的2.一鼓作气,战线拖得越长坚持不下去的可能性越大2.1、生活中有太多不可控因素,战线拉的太长一定会被干扰,理想状况是不存在的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="www.coderlychow.com/2016/12/21/Week17_liangjie-Methods/"/>
+
+  <title> liangjie Methods(第17周Summary课题) | For Life in Permanent Beta </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '84595258', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">For Life in Permanent Beta</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">the trick is to never stop starting.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'WFjz5j_iq3KdG8zjmBXr','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                liangjie Methods(第17周Summary课题)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-12-21T22:28:33+08:00" content="2016-12-21">
+              2016-12-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/21/Week17_liangjie-Methods/" class="leancloud_visitors" data-flag-title="liangjie Methods(第17周Summary课题)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下文字是梁杰同学过往遇到的各种问题，他的思考问题的过程，和他做出决定的结果!对我以后学习做事有很大的启发,决定作为一个课题好好感受他思考问题的路径,再次感谢他<a href="http://numbbbbb.com/" target="_blank" rel="external">在这里你可以发现这个有趣的人</a></p>
+<h3 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法:"></a>学习方法:</h3><h4 id="1-从知道到做到需要大量的重复-如果当前不能高频的使用大量重复学习就是无效的"><a href="#1-从知道到做到需要大量的重复-如果当前不能高频的使用大量重复学习就是无效的" class="headerlink" title="1.从知道到做到需要大量的重复,如果当前不能高频的使用大量重复学习就是无效的"></a>1.从知道到做到需要大量的重复,如果当前不能高频的使用大量重复学习就是无效的</h4><h4 id="2-一鼓作气-战线拖得越长坚持不下去的可能性越大"><a href="#2-一鼓作气-战线拖得越长坚持不下去的可能性越大" class="headerlink" title="2.一鼓作气,战线拖得越长坚持不下去的可能性越大"></a>2.一鼓作气,战线拖得越长坚持不下去的可能性越大</h4><h5 id="2-1、生活中有太多不可控因素-战线拉的太长一定会被干扰-理想状况是不存在的"><a href="#2-1、生活中有太多不可控因素-战线拉的太长一定会被干扰-理想状况是不存在的" class="headerlink" title="2.1、生活中有太多不可控因素,战线拉的太长一定会被干扰,理想状况是不存在的"></a>2.1、生活中有太多不可控因素,战线拉的太长一定会被干扰,理想状况是不存在的</h5><h5 id="2-2、隔的时间长每次投入学习时需要切换上下文环境和进入状态的时间太长"><a href="#2-2、隔的时间长每次投入学习时需要切换上下文环境和进入状态的时间太长" class="headerlink" title="2.2、隔的时间长每次投入学习时需要切换上下文环境和进入状态的时间太长"></a>2.2、隔的时间长每次投入学习时需要切换上下文环境和进入状态的时间太长</h5><h5 id="方法是"><a href="#方法是" class="headerlink" title="方法是:"></a>方法是:</h5><p>砸进一切时间,让自己在入门时就处于一个很高的初始速度,不要浪费时间做无用的计划,从现在开始一鼓作气用尽一切时间去学让正在学习的东西占满自己的缓存,实在太烦躁的时候睡一觉接着再战,半个月以后(作者指的是学日语)就入门了,很多后面的事情就简单了</p>
+<h4 id="3-学习高质量内容遇到挫败感时的心法是-作者目的是教你一些东西不是为了难住你-首先要去理解作者的思路-把一些困难当做纸老虎-然后坚持到底"><a href="#3-学习高质量内容遇到挫败感时的心法是-作者目的是教你一些东西不是为了难住你-首先要去理解作者的思路-把一些困难当做纸老虎-然后坚持到底" class="headerlink" title="3.学习高质量内容遇到挫败感时的心法是:作者目的是教你一些东西不是为了难住你,首先要去理解作者的思路,把一些困难当做纸老虎,然后坚持到底"></a>3.学习高质量内容遇到挫败感时的心法是:作者目的是教你一些东西不是为了难住你,首先要去理解作者的思路,把一些困难当做纸老虎,然后坚持到底</h4><h4 id="4-进入新领域学习最高频使用的东西-为解决某个问题而学习"><a href="#4-进入新领域学习最高频使用的东西-为解决某个问题而学习" class="headerlink" title="4.进入新领域学习最高频使用的东西,为解决某个问题而学习"></a>4.进入新领域学习最高频使用的东西,为解决某个问题而学习</h4><p>遇到尽量去做不会的跳过去,作为新手你现在还不是你去解决所有问题的时机,学习是拼图的过程把遇到的最常用的搞定,下次遇到另外的点再搞定,从基础学起的陷阱就是你花了很大功夫却解决不了遇到的问题,没有反馈和成就感会把自己压垮的</p>
+<h4 id="5-用6遍复习法巩固自己学的东西-假设在第1天学习会在第2、3、5、8、16天进行复习"><a href="#5-用6遍复习法巩固自己学的东西-假设在第1天学习会在第2、3、5、8、16天进行复习" class="headerlink" title="5.用6遍复习法巩固自己学的东西,假设在第1天学习会在第2、3、5、8、16天进行复习"></a>5.用6遍复习法巩固自己学的东西,假设在第1天学习会在第2、3、5、8、16天进行复习</h4><h4 id="6-不背单词-把背单词贯穿到整个学习中-在阅读和听力的过程中不放过任何一个生词记下来-这样记得比较牢固-而且积累的都是高频使用的单词"><a href="#6-不背单词-把背单词贯穿到整个学习中-在阅读和听力的过程中不放过任何一个生词记下来-这样记得比较牢固-而且积累的都是高频使用的单词" class="headerlink" title="6.不背单词,把背单词贯穿到整个学习中,在阅读和听力的过程中不放过任何一个生词记下来,这样记得比较牢固,而且积累的都是高频使用的单词"></a>6.不背单词,把背单词贯穿到整个学习中,在阅读和听力的过程中不放过任何一个生词记下来,这样记得比较牢固,而且积累的都是高频使用的单词</h4><a id="more"></a>
+<h3 id="减肥案例分析"><a href="#减肥案例分析" class="headerlink" title="减肥案例分析:"></a>减肥案例分析:</h3><blockquote>
+<p>多数问题之所以难以解决，不是因为问题本身难，（对我来说）也不是因为主观原因，而是因为要满足很多客观条件</p>
+</blockquote>
+<h4 id="我的核心需求是-减肥"><a href="#我的核心需求是-减肥" class="headerlink" title="我的核心需求是:减肥"></a>我的核心需求是:减肥</h4><h4 id="下面就看看我的人物设定："><a href="#下面就看看我的人物设定：" class="headerlink" title="下面就看看我的人物设定："></a>下面就看看我的人物设定：</h4><ul>
+<li>工作在互联网公司，每天 9 点半上班，6 点半下班</li>
+<li>由于身体原因，不能高强度跑步（膝盖会剧痛）</li>
+<li>家离公司 12 公里</li>
+<li>已婚</li>
+</ul>
+<h4 id="这些设定会带来什么限制呢？"><a href="#这些设定会带来什么限制呢？" class="headerlink" title="这些设定会带来什么限制呢？"></a>这些设定会带来什么限制呢？</h4><ul>
+<li>不能跑步</li>
+<li>不能影响上班</li>
+<li>不能晚回家</li>
+</ul>
+<h4 id="首先来看骑车可能存在的问题："><a href="#首先来看骑车可能存在的问题：" class="headerlink" title="首先来看骑车可能存在的问题："></a>首先来看骑车可能存在的问题：</h4><ul>
+<li>资金是否充足？</li>
+<li>如何防丢？</li>
+<li>时间是否充足？</li>
+<li>雾霾怎么办？（没错我在北京）</li>
+<li>去哪查询路线？</li>
+<li>骑车大量出汗上班怎么办？</li>
+</ul>
+<h4 id="用实践去验证"><a href="#用实践去验证" class="headerlink" title="用实践去验证:"></a>用实践去验证:</h4><h5 id="既然静态分析通过，那就直接执行"><a href="#既然静态分析通过，那就直接执行" class="headerlink" title="既然静态分析通过，那就直接执行:"></a>既然静态分析通过，那就直接执行:</h5><p>其实执行对我来说是最简单的事，真正难的是思考、分析和决定。一旦做了决定，我就可以屏蔽主观因素的影响，专心把事做好。</p>
+<h5 id="耐心"><a href="#耐心" class="headerlink" title="耐心:"></a>耐心:</h5><p>我认为身体进入状态需要一段时间，真正的减肥要发生在进入状态之后。某个周末我去买了车，到周一就开始骑车上下班。第四周，平淡无奇，每天上班下班，像呼吸一样自然。</p>
+<h4 id="保证学习"><a href="#保证学习" class="headerlink" title="保证学习:"></a>保证学习:</h4><p>下班后锻炼基本上不可行。即使是不加班，吃个晚饭去个健身房，等到家基本就该睡觉了，完全没有空闲时间学习。</p>
+<h5 id="个人喜好"><a href="#个人喜好" class="headerlink" title="个人喜好:"></a>个人喜好:</h5><p>部门老大每天中午去公司附近的健身房游泳，但是我不想1点半才吃午饭，也不想在冬天下水，所以没有选游泳。</p>
+<h3 id="做决定案例分析"><a href="#做决定案例分析" class="headerlink" title="做决定案例分析:"></a>做决定案例分析:</h3><h4 id="先列出不去的理由："><a href="#先列出不去的理由：" class="headerlink" title="先列出不去的理由："></a>先列出<strong>不去</strong>的理由：</h4><ul>
+<li>成本较高，来回高铁 1100，两天住宿 500</li>
+<li>周六开会，高铁要坐 5 小时，所以需要提前一天出发，也就是说周五要请假</li>
+</ul>
+<h4 id="再来看看去的理由："><a href="#再来看看去的理由：" class="headerlink" title="再来看看去的理由："></a>再来看看<strong>去</strong>的理由：</h4><ul>
+<li>之前说好去见民工哥</li>
+<li>没准可以认识新朋友</li>
+<li>学 CSS 技术</li>
+</ul>
+<h4 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择:"></a><strong>如何选择:</strong></h4><p>我选择<strong>去</strong>.</p>
+<p>分析是理性的，但是分析结果没有压倒性结论时就只能靠感性。我选择去的主要原因是裕波也过去，跟着裕波混一般都会有收获；其次，少一千多块钱确实也饿不死。这样下结论未免有点太随便，不过就我个人经验来看，和牛人接触越多越好。这个观点已经经过多次验证，十分靠谱。</p>
+<p>最后一条很重要，有效聊天指的是真正讨论问题、交流想法。要知道，大会上接触到的都是身经百战的大牛，随便指点一下就能让我少走很多弯路。</p>
+<h3 id="一场演讲听什么案例分析"><a href="#一场演讲听什么案例分析" class="headerlink" title="一场演讲听什么案例分析:"></a>一场演讲听什么案例分析:</h3><h4 id="一、听思想"><a href="#一、听思想" class="headerlink" title="一、听思想"></a>一、听思想</h4><p>大会不是课堂，而是交流思想的地方。重要的是为什么，而不是是什么。一个实用的办法就是把自己放到讲者的位置，思考一下如果这些内容是自己在讲，希望传达给听众什么信息。</p>
+<h4 id="二、听过程"><a href="#二、听过程" class="headerlink" title="二、听过程"></a>二、听过程</h4><p>有些讲者的内容是解决问题，比如如何优化angularjs的性能。对于这类内容，重点是听讲者是如何发现这些方法、解决过程中遇到了哪些问题以及如何在不同方法之间进行选择，而不是仅仅记住方法本身。解决问题的思路是“渔”，最终的解决方案是“鱼”。</p>
+<h4 id="三、听演讲"><a href="#三、听演讲" class="headerlink" title="三、听演讲"></a>三、听演讲</h4><p>这里说的演讲是指演讲技巧。其实听别人演讲是有效提升自己演讲水平的一个方法，如果你能发现别人演讲中的问题，那你就更容易在自己演讲的时候避免这些问题。</p>
+<p>好上周在金山进行了分享，之后又看了《TED演讲的秘密》，所以这次大会我特意注意了一下每个讲者的演讲方式，发现了不少问题。最常见的几点：声音小，语气无起伏，PPT内容不恰当。还是前面说到的，演讲要传播的是思想，一张直观的图远比一页代码容易理解。</p>
+<h4 id="四、知识吸收"><a href="#四、知识吸收" class="headerlink" title="四、知识吸收"></a>四、知识吸收</h4><p>记笔记，一定要记笔记，千万不要相信自己的记忆力。很有可能一觉醒来你连昨天有几个嘉宾都想不起来了，所以一定、一定要记笔记。</p>
+<p>笔记不光要记大会的内容，还要记自己的想法和灵感。听大会的时候往往会产生很多灵感，一定要尽快记录下来，会后再进行深入思考。</p>
+<p>会后需要整理笔记，一方面是分类和规范化记录的内容，另一方面是对笔记中记下的灵感进行进一步的思考和分析，将灵感的力量真正发挥出来。</p>
+<p>世上没有完美的方法，只有完美的使用场景</p>
+<p>这件事的深远影响在于我开始真正做一些事，也意识到自己真的可以做一些事，实践是最好的老师。本来没报太大希望，但是看到这些邮件之后我明白了一件事——很多时候事情本没有那么困难，是我们自己限制了自己。</p>
+<p>浪漫一点宣告失败，但是收获很多，更加踏实，自己的未来也更加真实。</p>
+<p>首先搬家到了本部校区，加入实验室，接了一个项目，课程依然紧张，每年压力巨大。有一段时间，我突然会觉得受不了，为什么要这么努力呢？想了很久，一次比一次坚定，想变得更好。然后miracle happened。这里大家基本都知道了，组织翻译Swift，9天完成，star几千，各种采访和演讲，生活完全变了样。真说起来故事实在太长，还是等放假有时间了我再好好写吧，总之，完全进入了另一条世界线。</p>
+<p>而是他们在一路上的成长过程中，掌握到与众不同的思维方式以及自学方法，乃至于可以迅速地拓展编程技能树以及在原先的境界中不断地突破。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/18/Week16_Principles-by-Ray-Dalio-Main-point-Translate-From-Page-1-to-14/" rel="next" title="Principles by Ray Dalio Main point Translate From Page 1 to 14(第16周Summary课题)">
+                <i class="fa fa-chevron-left"></i> Principles by Ray Dalio Main point Translate From Page 1 to 14(第16周Summary课题)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="luyao" />
+          <p class="site-author-name" itemprop="name">luyao</p>
+          <p class="site-description motion-element" itemprop="description">Planning and adapting is being about flexibly persistent:always ready to adapt,but also persistent in driving towards set goals.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LYChow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/chow_ly" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#学习方法"><span class="nav-number">1.</span> <span class="nav-text">学习方法:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-从知道到做到需要大量的重复-如果当前不能高频的使用大量重复学习就是无效的"><span class="nav-number">1.1.</span> <span class="nav-text">1.从知道到做到需要大量的重复,如果当前不能高频的使用大量重复学习就是无效的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-一鼓作气-战线拖得越长坚持不下去的可能性越大"><span class="nav-number">1.2.</span> <span class="nav-text">2.一鼓作气,战线拖得越长坚持不下去的可能性越大</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1、生活中有太多不可控因素-战线拉的太长一定会被干扰-理想状况是不存在的"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1、生活中有太多不可控因素,战线拉的太长一定会被干扰,理想状况是不存在的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2、隔的时间长每次投入学习时需要切换上下文环境和进入状态的时间太长"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2、隔的时间长每次投入学习时需要切换上下文环境和进入状态的时间太长</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法是"><span class="nav-number">1.2.3.</span> <span class="nav-text">方法是:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-学习高质量内容遇到挫败感时的心法是-作者目的是教你一些东西不是为了难住你-首先要去理解作者的思路-把一些困难当做纸老虎-然后坚持到底"><span class="nav-number">1.3.</span> <span class="nav-text">3.学习高质量内容遇到挫败感时的心法是:作者目的是教你一些东西不是为了难住你,首先要去理解作者的思路,把一些困难当做纸老虎,然后坚持到底</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进入新领域学习最高频使用的东西-为解决某个问题而学习"><span class="nav-number">1.4.</span> <span class="nav-text">4.进入新领域学习最高频使用的东西,为解决某个问题而学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-用6遍复习法巩固自己学的东西-假设在第1天学习会在第2、3、5、8、16天进行复习"><span class="nav-number">1.5.</span> <span class="nav-text">5.用6遍复习法巩固自己学的东西,假设在第1天学习会在第2、3、5、8、16天进行复习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-不背单词-把背单词贯穿到整个学习中-在阅读和听力的过程中不放过任何一个生词记下来-这样记得比较牢固-而且积累的都是高频使用的单词"><span class="nav-number">1.6.</span> <span class="nav-text">6.不背单词,把背单词贯穿到整个学习中,在阅读和听力的过程中不放过任何一个生词记下来,这样记得比较牢固,而且积累的都是高频使用的单词</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减肥案例分析"><span class="nav-number">2.</span> <span class="nav-text">减肥案例分析:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我的核心需求是-减肥"><span class="nav-number">2.1.</span> <span class="nav-text">我的核心需求是:减肥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下面就看看我的人物设定："><span class="nav-number">2.2.</span> <span class="nav-text">下面就看看我的人物设定：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这些设定会带来什么限制呢？"><span class="nav-number">2.3.</span> <span class="nav-text">这些设定会带来什么限制呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#首先来看骑车可能存在的问题："><span class="nav-number">2.4.</span> <span class="nav-text">首先来看骑车可能存在的问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用实践去验证"><span class="nav-number">2.5.</span> <span class="nav-text">用实践去验证:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#既然静态分析通过，那就直接执行"><span class="nav-number">2.5.1.</span> <span class="nav-text">既然静态分析通过，那就直接执行:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#耐心"><span class="nav-number">2.5.2.</span> <span class="nav-text">耐心:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保证学习"><span class="nav-number">2.6.</span> <span class="nav-text">保证学习:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#个人喜好"><span class="nav-number">2.6.1.</span> <span class="nav-text">个人喜好:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做决定案例分析"><span class="nav-number">3.</span> <span class="nav-text">做决定案例分析:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#先列出不去的理由："><span class="nav-number">3.1.</span> <span class="nav-text">先列出不去的理由：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#再来看看去的理由："><span class="nav-number">3.2.</span> <span class="nav-text">再来看看去的理由：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何选择"><span class="nav-number">3.3.</span> <span class="nav-text">如何选择:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一场演讲听什么案例分析"><span class="nav-number">4.</span> <span class="nav-text">一场演讲听什么案例分析:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、听思想"><span class="nav-number">4.1.</span> <span class="nav-text">一、听思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、听过程"><span class="nav-number">4.2.</span> <span class="nav-text">二、听过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、听演讲"><span class="nav-number">4.3.</span> <span class="nav-text">三、听演讲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、知识吸收"><span class="nav-number">4.4.</span> <span class="nav-text">四、知识吸收</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">luyao</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3XyhYMqxc2bwFHPrQqGqa5BO-gzGzoHsz", "CmQQXos7nqS2j3zgcIL5kbpC");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
