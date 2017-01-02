@@ -1,0 +1,774 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google7dbb8a5329ef9b78.html" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="每月11号review一次,分析未达成原因，为了完成今年目标接下来怎么调整
+
+2017年的5个目标:1.能熟练写出C/C++的商用程序,标准是负责公司相关工作被认可2.MIT的Introduction to Computer Science and Programming Using Python课程,完成目标的标准是获得官方的颁发的证书和成绩单3.Beyond Feelings尽量把书本的习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016 Complete 2017 Start(第18周Summary课题)">
+<meta property="og:url" content="www.coderlychow.com/2017/01/02/Week18_2016-Complete-2017-Start/index.html">
+<meta property="og:site_name" content="For Life in Permanent Beta">
+<meta property="og:description" content="每月11号review一次,分析未达成原因，为了完成今年目标接下来怎么调整
+
+2017年的5个目标:1.能熟练写出C/C++的商用程序,标准是负责公司相关工作被认可2.MIT的Introduction to Computer Science and Programming Using Python课程,完成目标的标准是获得官方的颁发的证书和成绩单3.Beyond Feelings尽量把书本的习题">
+<meta property="og:image" content="www.coderlychow.com/images/Week18_2016_Complete_2017_Start.jpg">
+<meta property="og:updated_time" content="2017-01-02T14:03:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016 Complete 2017 Start(第18周Summary课题)">
+<meta name="twitter:description" content="每月11号review一次,分析未达成原因，为了完成今年目标接下来怎么调整
+
+2017年的5个目标:1.能熟练写出C/C++的商用程序,标准是负责公司相关工作被认可2.MIT的Introduction to Computer Science and Programming Using Python课程,完成目标的标准是获得官方的颁发的证书和成绩单3.Beyond Feelings尽量把书本的习题">
+<meta name="twitter:image" content="www.coderlychow.com/images/Week18_2016_Complete_2017_Start.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="www.coderlychow.com/2017/01/02/Week18_2016-Complete-2017-Start/"/>
+
+  <title> 2016 Complete 2017 Start(第18周Summary课题) | For Life in Permanent Beta </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '84595258', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">For Life in Permanent Beta</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">the trick is to never stop starting.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'WFjz5j_iq3KdG8zjmBXr','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                2016 Complete 2017 Start(第18周Summary课题)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-01-02T21:53:04+08:00" content="2017-01-02">
+              2017-01-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/02/Week18_2016-Complete-2017-Start/" class="leancloud_visitors" data-flag-title="2016 Complete 2017 Start(第18周Summary课题)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>每月11号review一次,分析未达成原因，为了完成今年目标接下来怎么调整</p>
+</blockquote>
+<h3 id="2017年的5个目标"><a href="#2017年的5个目标" class="headerlink" title="2017年的5个目标:"></a>2017年的5个目标:</h3><h4 id="1-能熟练写出C-C-的商用程序-标准是负责公司相关工作被认可"><a href="#1-能熟练写出C-C-的商用程序-标准是负责公司相关工作被认可" class="headerlink" title="1.能熟练写出C/C++的商用程序,标准是负责公司相关工作被认可"></a>1.能熟练写出C/C++的商用程序,标准是负责公司相关工作被认可</h4><h4 id="2-MIT的Introduction-to-Computer-Science-and-Programming-Using-Python课程-完成目标的标准是获得官方的颁发的证书和成绩单"><a href="#2-MIT的Introduction-to-Computer-Science-and-Programming-Using-Python课程-完成目标的标准是获得官方的颁发的证书和成绩单" class="headerlink" title="2.MIT的Introduction to Computer Science and Programming Using Python课程,完成目标的标准是获得官方的颁发的证书和成绩单"></a>2.MIT的<strong>Introduction to Computer Science and Programming Using Python</strong>课程,完成目标的标准是获得官方的颁发的证书和成绩单</h4><h4 id="3-Beyond-Feelings尽量把书本的习题做好-principles弄一遍之后就开始-完成目标的标准是就算在论坛抄写答案也要把习题做完"><a href="#3-Beyond-Feelings尽量把书本的习题做好-principles弄一遍之后就开始-完成目标的标准是就算在论坛抄写答案也要把习题做完" class="headerlink" title="3.Beyond Feelings尽量把书本的习题做好,principles弄一遍之后就开始.完成目标的标准是就算在论坛抄写答案也要把习题做完"></a>3.<strong>Beyond Feelings尽量把书本的习题做好,principles弄一遍之后就开始.完成目标的标准是就算在论坛抄写答案也要把习题做完</strong></h4><h4 id="4-准备把这几年糟蹋的钱给还上-分12次转账-第一次转账20161223￥6000已经到账-预计2017年每月攒4000-在2017-11-15号5万块钱还完-每月15号还不上-分析原因找解决办法"><a href="#4-准备把这几年糟蹋的钱给还上-分12次转账-第一次转账20161223￥6000已经到账-预计2017年每月攒4000-在2017-11-15号5万块钱还完-每月15号还不上-分析原因找解决办法" class="headerlink" title="4.准备把这几年糟蹋的钱给还上,分12次转账,第一次转账20161223￥6000已经到账,预计2017年每月攒4000,在2017.11.15号5万块钱还完,每月15号还不上,分析原因找解决办法"></a>4.准备把这几年糟蹋的钱给还上,分12次转账,第一次转账20161223￥6000已经到账,预计2017年每月攒4000,在2017.11.15号5万块钱还完,每月15号还不上,分析原因找解决办法</h4><h4 id="5-20160911号减到80kg-减不到剩下的几个月加强运动强度-每月11号review一次-每月1kg减不到分析原因调整运动强度"><a href="#5-20160911号减到80kg-减不到剩下的几个月加强运动强度-每月11号review一次-每月1kg减不到分析原因调整运动强度" class="headerlink" title="5.20160911号减到80kg,减不到剩下的几个月加强运动强度.每月11号review一次,每月1kg减不到分析原因调整运动强度"></a>5.20160911号减到80kg,减不到剩下的几个月加强运动强度.每月11号review一次,每月1kg减不到分析原因调整运动强度</h4><h3 id="2016年元旦的3个目标"><a href="#2016年元旦的3个目标" class="headerlink" title="2016年元旦的3个目标:"></a>2016年元旦的3个目标:</h3><h4 id="1-减到80kg"><a href="#1-减到80kg" class="headerlink" title="1.减到80kg"></a>1.减到80kg</h4><h4 id="2-找个对象"><a href="#2-找个对象" class="headerlink" title="2.找个对象"></a>2.找个对象</h4><h4 id="3-去趟日本"><a href="#3-去趟日本" class="headerlink" title="3.去趟日本"></a>3.去趟日本</h4><h4 id="完成情况-一个都未完成-啪啪啪打脸相当于放了一个屁自己又给它吃了"><a href="#完成情况-一个都未完成-啪啪啪打脸相当于放了一个屁自己又给它吃了" class="headerlink" title="完成情况:一个都未完成,啪啪啪打脸相当于放了一个屁自己又给它吃了"></a>完成情况:一个都未完成,啪啪啪打脸相当于放了一个屁自己又给它吃了</h4><h3 id="2016年我做了什么"><a href="#2016年我做了什么" class="headerlink" title="2016年我做了什么:"></a>2016年我做了什么:</h3><p>1.当时觉得在公司再待一年可能也就那样没啥成长,又被一个用一年时间把很多年钱给挣了一劳永逸的念头冲昏了头脑,我离职了</p>
+<p>2.出去转了一圈消灭了选择,决定在一个行业进行深挖,意识到人只要还没死就会感受到压力一劳永逸是不存在的,寻找一个能够感受到快乐的节奏,去不停的跨越里程碑,至死方休</p>
+<p>3.面试屡遭碰壁在一到两天的惶恐之后意识到只要我每天在专业上有进步我就什么都不怕,不论被拒绝这个过程有多漫长,在那一个月里为了学到更多的东西,从懒散不靠谱养成了相对自律的习惯</p>
+<p>4.加入了一个平均年龄35岁有十多年技术积累的团队,离住的地15分钟路程每天多出四个小时做了很多自己想做的事</p>
+<p>5.每周3次每次5km+50分钟左右的跑步,养成了早睡的习惯</p>
+<p>6.英语对我来说已经不再是个技术问题,而是一个可预期的时间问题</p>
+<h3 id="2016年影响我的思维方式"><a href="#2016年影响我的思维方式" class="headerlink" title="2016年影响我的思维方式:"></a>2016年影响我的思维方式:</h3><p>1.你这样做结果是你想要的吗?先真诚先付出先丢脸去努力让关系进入一个正向循环,世界是有生命你想让别人怎么对你你就怎么去对待别人,去感染他直到得到想要的结果</p>
+<p>2.有一种可以追求的快感是痛苦的终止</p>
+<p>3.应激反应-&gt;情绪反应-&gt;理性思考</p>
+<p>4.许多事情被放在一个足够长的时间线上,意义完全不一样,如果以10年为跨度往回看很多决定就显而易见了</p>
+<p>5.作为新手完全的迷信高手,一开始就质疑去挑他的缺点就很难按照他的指导去练习,是在坑自己学不到什么</p>
+<p>6.上帝模式和农民模式</p>
+<p>7.不生气的原因是不想影响我的心情从而影响我的效率,那些想找茬的人相对于我想要的成长,我想要达成的目标实在太不重要了</p>
+<p>8.在大鱼中获得一个重要的启示:我不是这样死的,去探险追求自己最想要最心动的东西,在遇到困境时能马上从恐惧和惶恐中镇定下来,一切困难就迎刃而解了,去想象自己激动人心的命运</p>
+<p>9.通过planet earth了解了地球演化史,知道了人类能活在这个时代是多么的幸运奇迹地球在宇宙中几十亿行星中是多么奇迹的存在,决定以后不让生活的琐碎再浪费自己的生命,去追求自己最心动的东西</p>
+<p>10.和人接触时先让别人爽,花心思让整个过程有趣起来！至于别人会不会喜欢自己不抱指望,如果别人也让自己爽了就当成是额外赠送的吧</p>
+<h3 id="捕获到的很有价值的灵感"><a href="#捕获到的很有价值的灵感" class="headerlink" title="捕获到的很有价值的灵感:"></a>捕获到的很有价值的灵感:</h3><p>1.紧张:关系没有那么亲近,或者用脑过度反应不过来</p>
+<p>2.吸引力就是多大程度上获取别人的注意力,人天生被意外吸引规律的声音不是噪音,我们被坏男人所吸引就是因为他不可预料能够带来惊喜</p>
+<p>3.有打有闹的基础是有理有据从多个角度歪曲反驳</p>
+<p>4.通常别人怎么对你,你就是什么样的人</p>
+<p>5.很多有大成就的人不过是一次次际遇之后的被动选择而已</p>
+<p>6.有一种可以追求的快感是痛苦的终止,痛苦只是一个相对的概念</p>
+<p>7.实践的本质在于获得及时反馈,及时反馈是进步的来源</p>
+<p>8.一劳永逸是不存在的,只要还没死就会感受到压力!寻找一种节奏，一种能感受到快乐的持续调整的节奏去不停地跨越里程碑</p>
+<p>9.知道到做到的本质是能够有机会进行大量的重复,高频的使用</p>
+<p>10.所谓思考不过是调用自己记忆片段的连接而已,重复是为了形成长期可供调用的记忆,don’t think,sean.Let your body move to the beat!</p>
+<h3 id="做有结果的事情"><a href="#做有结果的事情" class="headerlink" title="做有结果的事情:"></a>做有结果的事情:</h3><p>1.关系还没有到随心所欲的程度的时候,先演练一遍做一些准备</p>
+<p>2.对别人不满意不要不好意思说给别人脸子让他去领悟,告诉他你的不满意,耐心去教他</p>
+<p>3.找人说事时不要直接冷冰冰的开始,先寒暄先说一些轻松的话题和有趣的事把气氛调起来之后再说正事</p>
+<h3 id="快速学会任何技能的方法"><a href="#快速学会任何技能的方法" class="headerlink" title="快速学会任何技能的方法:"></a>快速学会任何技能的方法:</h3><p>1.把遇到的每一个点学精,不要贪多,学精可参考的标准是比周围所有的同事在这一个点上都要精通,慢不打紧把每一个遇到的点学精,时间一长就完成了拼图</p>
+<p>2.像专家那样思考问题解决问题,模仿专家以专家的标准要求自己是成为专家的最快的办法</p>
+<p>3.只学习那些马上能做出成果的最小可上手知识,学到的东西想尽一切办法用到项目中,用到生活中</p>
+<p>4.对过往的相关技能的学习方法进行总结,学习新技能时看不能套用</p>
+<p>5.先理解业务的概念-&gt;如果你去设计你会怎么设计这个逻辑和流程-&gt;然后再和相关的同事去印证自己的想法哪里不妥</p>
+<p>6.对自己已经熟悉技能开启左脑分析模式，对未知的领域不去分析先模仿那些高频用到的套路马上上手</p>
+<p>7.I don’t read books,never went to school ,i just read other people’s code and always wonder how things work!</p>
+<p>8.一鼓作气,战线拖得越长坚持不下去的可能性越大：战线拉的太长一定会被不可控的因素干扰,隔太长切换上下文环境和进入状态的时间太长,砸进一切时间,让自己在入门时就处于一个很高的初始速度,不要浪费时间做无用的计划,从现在开始一鼓作气用尽一切时间去学让正在学习的东西占满自己的缓存,实在太烦躁的时候睡一觉接着再战,半个月以后(梁杰指的是学日语)就入门了,很多后面的事情就简单了</p>
+<p><img src="/images/Week18_2016_Complete_2017_Start.jpg" alt="vision"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/21/Week17_liangjie-Methods/" rel="next" title="liangjie Methods(第17周Summary课题)">
+                <i class="fa fa-chevron-left"></i> liangjie Methods(第17周Summary课题)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="luyao" />
+          <p class="site-author-name" itemprop="name">luyao</p>
+          <p class="site-description motion-element" itemprop="description">Planning and adapting is being about flexibly persistent:always ready to adapt,but also persistent in driving towards set goals.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LYChow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/chow_ly" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017年的5个目标"><span class="nav-number">1.</span> <span class="nav-text">2017年的5个目标:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-能熟练写出C-C-的商用程序-标准是负责公司相关工作被认可"><span class="nav-number">1.1.</span> <span class="nav-text">1.能熟练写出C/C++的商用程序,标准是负责公司相关工作被认可</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-MIT的Introduction-to-Computer-Science-and-Programming-Using-Python课程-完成目标的标准是获得官方的颁发的证书和成绩单"><span class="nav-number">1.2.</span> <span class="nav-text">2.MIT的Introduction to Computer Science and Programming Using Python课程,完成目标的标准是获得官方的颁发的证书和成绩单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Beyond-Feelings尽量把书本的习题做好-principles弄一遍之后就开始-完成目标的标准是就算在论坛抄写答案也要把习题做完"><span class="nav-number">1.3.</span> <span class="nav-text">3.Beyond Feelings尽量把书本的习题做好,principles弄一遍之后就开始.完成目标的标准是就算在论坛抄写答案也要把习题做完</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-准备把这几年糟蹋的钱给还上-分12次转账-第一次转账20161223￥6000已经到账-预计2017年每月攒4000-在2017-11-15号5万块钱还完-每月15号还不上-分析原因找解决办法"><span class="nav-number">1.4.</span> <span class="nav-text">4.准备把这几年糟蹋的钱给还上,分12次转账,第一次转账20161223￥6000已经到账,预计2017年每月攒4000,在2017.11.15号5万块钱还完,每月15号还不上,分析原因找解决办法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-20160911号减到80kg-减不到剩下的几个月加强运动强度-每月11号review一次-每月1kg减不到分析原因调整运动强度"><span class="nav-number">1.5.</span> <span class="nav-text">5.20160911号减到80kg,减不到剩下的几个月加强运动强度.每月11号review一次,每月1kg减不到分析原因调整运动强度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016年元旦的3个目标"><span class="nav-number">2.</span> <span class="nav-text">2016年元旦的3个目标:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-减到80kg"><span class="nav-number">2.1.</span> <span class="nav-text">1.减到80kg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找个对象"><span class="nav-number">2.2.</span> <span class="nav-text">2.找个对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-去趟日本"><span class="nav-number">2.3.</span> <span class="nav-text">3.去趟日本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完成情况-一个都未完成-啪啪啪打脸相当于放了一个屁自己又给它吃了"><span class="nav-number">2.4.</span> <span class="nav-text">完成情况:一个都未完成,啪啪啪打脸相当于放了一个屁自己又给它吃了</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016年我做了什么"><span class="nav-number">3.</span> <span class="nav-text">2016年我做了什么:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016年影响我的思维方式"><span class="nav-number">4.</span> <span class="nav-text">2016年影响我的思维方式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#捕获到的很有价值的灵感"><span class="nav-number">5.</span> <span class="nav-text">捕获到的很有价值的灵感:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做有结果的事情"><span class="nav-number">6.</span> <span class="nav-text">做有结果的事情:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速学会任何技能的方法"><span class="nav-number">7.</span> <span class="nav-text">快速学会任何技能的方法:</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">luyao</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3XyhYMqxc2bwFHPrQqGqa5BO-gzGzoHsz", "CmQQXos7nqS2j3zgcIL5kbpC");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
